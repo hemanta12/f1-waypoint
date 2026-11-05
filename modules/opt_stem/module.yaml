@@ -1,0 +1,10 @@
+id: opt_stem
+covered_topics:
+  - OPT and post-completion work authorization
+  - STEM OPT extension
+  - Forms I-765, I-983 and I-20 as they relate to OPT
+retrieval_threshold: 0.35
+referrals:
+  out_of_scope:
+    label: Your school's DSO
+    url: https://studyinthestates.dhs.gov/

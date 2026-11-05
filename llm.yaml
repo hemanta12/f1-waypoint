@@ -1,0 +1,10 @@
+classifier:
+  model: unset
+  provider: unset
+  max_output_tokens: 100
+  temperature: 0
+generator:
+  model: unset
+  provider: unset
+  max_output_tokens: 600
+  temperature: 0
