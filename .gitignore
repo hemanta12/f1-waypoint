@@ -1,0 +1,13 @@
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+agent/
+.agent/
+.claude/rules/
+.claude/settings.local.json
+docs/memory.md
+docs/logs/
+
+docs/dev/
+
+docs/DECISIONS.md
