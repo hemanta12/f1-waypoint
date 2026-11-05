@@ -1,0 +1,101 @@
+- doc_id: uscis-opt
+  title: Optional Practical Training (OPT) for F-1 Students
+  url: https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students
+  tier: official
+  authoritative_for: Pre- and post-completion OPT eligibility, filing windows and the I-765 process.
+
+- doc_id: uscis-stem-opt
+  title: Optional Practical Training Extension for STEM Students (STEM OPT)
+  url: https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-extension-for-stem-students-stem-opt
+  tier: official
+  authoritative_for: STEM OPT eligibility, the 90/150 day filing table, the 180-day auto-extension and reporting deadlines.
+
+- doc_id: uscis-policy-manual-practical-training
+  title: Policy Manual Volume 2, Part F, Chapter 5 - Practical Training
+  url: https://www.uscis.gov/policy-manual/volume-2-part-f-chapter-5
+  tier: official
+  authoritative_for: How USCIS adjudicates OPT and STEM OPT requests, in more detail than the public pages.
+
+- doc_id: dhs-stem-opt-extension-overview
+  title: STEM OPT Extension Overview
+  url: https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/stem-opt-extension-overview
+  tier: official
+  authoritative_for: The extra 60 days of unemployment allowed during the 24-month STEM OPT extension.
+
+- doc_id: dhs-students-and-form-i-983
+  title: Students and the Form I-983
+  url: https://studyinthestates.dhs.gov/stem-opt-hub/for-students/students-and-the-form-i-983
+  tier: official
+  authoritative_for: What a student must complete and submit to the DSO on the I-983, including the final evaluation.
+
+- doc_id: dhs-form-i-983-overview
+  title: Form I-983 Overview
+  url: https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/form-i-983-overview
+  tier: official
+  authoritative_for: Who completes the I-983, material changes to the plan and the evaluation requirements.
+
+- doc_id: dhs-student-stem-opt-reporting
+  title: "Students: STEM OPT Reporting Requirements"
+  url: https://studyinthestates.dhs.gov/stem-opt-hub/for-students/students-stem-opt-reporting-requirements
+  tier: official
+  authoritative_for: What a STEM OPT student must report and to whom, including employer noncompliance.
+
+- doc_id: dhs-dso-stem-opt-reporting
+  title: "DSOs: STEM OPT Reporting Requirements"
+  url: https://studyinthestates.dhs.gov/stem-opt-hub/for-schools/dsos-stem-opt-reporting-requirements
+  tier: official
+  authoritative_for: The DSO side of reporting, including the 10-day new-employer I-983 rule.
+
+- doc_id: dhs-unemployment-counter
+  title: Unemployment Counter
+  url: https://studyinthestates.dhs.gov/sevis-help-hub/student-records/fm-student-employment/unemployment-counter
+  tier: official
+  authoritative_for: How SEVIS counts days of unemployment on OPT and STEM OPT.
+
+- doc_id: dhs-sevp-portal-overview
+  title: SEVP Portal Overview
+  url: https://studyinthestates.dhs.gov/sevp-portal-help/getting-started/sevp-portal-overview
+  tier: official
+  authoritative_for: What students can report themselves in the SEVP Portal and what must go through the DSO.
+
+- doc_id: ice-form-i-983
+  title: Form I-983, Training Plan for STEM OPT Students
+  url: https://www.ice.gov/doclib/sevis/pdf/i983.pdf
+  tier: official
+  authoritative_for: The form itself, including the layout of the evaluation sections.
+
+- doc_id: ice-form-i-983-instructions
+  title: Completing the Form I-983 Training Plan for STEM OPT Students
+  url: https://www.ice.gov/doclib/sevis/pdf/i983Instructions.pdf
+  tier: official
+  authoritative_for: Official instructions for each I-983 section, including evaluation timing and signatures.
+
+- doc_id: ecfr-8-cfr-214-2
+  title: 8 CFR 214.2 - Special requirements for admission, extension, and maintenance of status
+  url: https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/subpart-A/section-214.2
+  tier: official
+  authoritative_for: The regulation text; practical training is paragraph (f)(10).
+
+- doc_id: dhs-stem-opt-faq
+  title: STEM OPT Frequently Asked Questions
+  url: https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/stem-opt-frequently-asked-questions
+  tier: official
+  authoritative_for: DHS answers to common STEM OPT questions, split by students, employers and school officials.
+
+- doc_id: ice-practical-training
+  title: Practical Training
+  url: https://www.ice.gov/sevis/practical-training
+  tier: official
+  authoritative_for: CPT versus OPT and the separate roles of the school, the employer and USCIS.
+
+- doc_id: ice-opt-direct-relationship-guidance
+  title: "SEVP Policy Guidance: Practical Training - Determining a Direct Relationship Between Employment and Degree"
+  url: https://www.ice.gov/doclib/sevis/pdf/optDirectlyRelatedGuidance.pdf
+  tier: official
+  authoritative_for: How a job must relate to the student's degree for OPT and STEM OPT.
+
+- doc_id: uscis-i-765-instructions
+  title: Instructions for Form I-765, Application for Employment Authorization
+  url: https://www.uscis.gov/sites/default/files/document/forms/i-765instr.pdf
+  tier: official
+  authoritative_for: Filing requirements, evidence and the OPT and STEM OPT eligibility categories for the I-765.
