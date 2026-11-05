@@ -41,7 +41,7 @@ Caution has no color of its own: a neutral box with a ▲ icon. There is no ambe
 
 - **Home.** Header with the wordmark and a verified badge. Two tabs: Ask and Application form help. Then the input with the Ask button as a separate full-width button beneath it, a one-line privacy hint, a short "Try asking" list, a coverage note, and a text link to the employer brief.
 - **Answer.** The question appears as a large heading above the card, joined to it by a dot and a thin line, and the phrase it shares with the answer is underlined in both. The card leads with a key fact row (the figure, the rule, who to report to), then an answer sentence that reuses the question's own words, then the sources.
-- **Sources.** One tappable row per source. Each states its tier in plain words, "Official source" or "University guide, not official", with a distinct marker. Tapping opens the exact passage with the supporting sentence highlighted, the official link and the verified-on date.
+- **Sources.** One tappable row per source. Each states its source in plain words, "Official source", with a marker. Tapping opens the exact passage with the supporting sentence highlighted, the official link and the verified-on date.
 - **Refusal.** A white card with a teal outline and a teal title, under the same question heading. Three plain groups: what the sources say, what can't be decided here, and who can decide.
 - **Verified badge.** Shows the verified-on date, and turns into a neutral "Sources may be out of date" notice after 14 days.
 - **Application form help and employer brief.** Cited, copyable scripts for the two application questions, and a one-page on-screen brief.

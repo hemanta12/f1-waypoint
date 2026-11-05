@@ -45,3 +45,7 @@ Python 3.12 with FastAPI, SQLite with sqlite-vec, React with Vite and TypeScript
 ## Privacy
 
 No accounts. Raw question text is not logged. Questions are sent to a model provider. The input screen rejects A-numbers and receipt numbers.
+
+## Sources
+
+Answers come from public pages and forms of the U.S. Citizenship and Immigration Services (USCIS), U.S. Immigration and Customs Enforcement (ICE) and the Department of Homeland Security (DHS), plus the Code of Federal Regulations via eCFR. The snapshot in `modules/opt_stem/corpus/` holds copies saved on the dates in `registry.json`, with the original URL for each in `modules/opt_stem/sources.yaml`. The live page is always the authority. This project is independent and not affiliated with any of these agencies.

@@ -86,7 +86,7 @@ The eval set is about 65 hand-written questions with gold passages (not gold ans
 
 ## Sources and privacy
 
-- **Two source tiers.** Official sources (USCIS, DHS Study in the States, the Federal Register, eCFR) are the only basis for deadlines, numbers and rules. A few university guides are used for the Portal-versus-DSO split, employer factsheets and application-script nuance. Every citation shows its tier in plain words.
+- **Official sources only.** USCIS, DHS Study in the States, ICE and eCFR documents are the only basis for answers. No university guides are used; when a question depends on a school's own process, the answer points the student to their school's international office. Every citation shows its source in plain words.
 - No accounts. Raw question text is not logged. Questions are sent to a model provider, which the product names. The input screen rejects A-numbers and receipt numbers.
 - A "Report a wrong answer" action stores a question only after the user confirms.
 - The product never implies government affiliation.

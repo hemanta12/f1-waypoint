@@ -40,5 +40,5 @@ The date of the last successful re-crawl that confirmed a source page, whether o
 _Avoid_: Last updated
 
 **Source tier**:
-Whether a document is `official` (government publication) or `university` (a school's guide). Deadlines and numbers come from `official` only, and every citation shows its tier.
+Where a document comes from. v1 has one tier, `official` (government publication: USCIS, DHS, ICE, eCFR). Deadlines and numbers come from it only, and every citation shows its tier. University guides are not used; for a school's own process the product refers the user to that school's international office.
 _Avoid_: Source quality, trust level

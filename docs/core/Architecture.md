@@ -12,7 +12,7 @@ The model wrapper has two roles, a classifier and a generator. Each is mapped to
 
 ```mermaid
 flowchart LR
-  SRC["Tiered sources<br/>official and university"] --> ING["Ingestion<br/>fetch, extract, chunk, index"]
+  SRC["Official sources"] --> ING["Ingestion<br/>fetch, extract, chunk, index"]
   FRESH["Freshness job<br/>scheduled re-crawl, hash diff"] -.->|"triggers"| ING
   ING --> CAND["Candidate corpus"]
   CAND --> EVAL{"Eval harness<br/>regression vs last accepted run?"}
@@ -33,7 +33,7 @@ Read it as two loops that meet at the live corpus. The top loop builds and vets 
 
 ```mermaid
 flowchart LR
-  SRC["Tiered sources<br/>official and university"] --> FETCH["Fetcher"]
+  SRC["Official sources"] --> FETCH["Fetcher"]
   FETCH --> RAW["Raw snapshots"]
   FETCH --> REG[("Registry<br/>ID, URL, tier, hash, verified-on")]
   RAW --> EXTRACT["Text extraction"]
