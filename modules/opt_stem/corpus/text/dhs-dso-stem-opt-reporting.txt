@@ -1,0 +1,284 @@
+DSOs: STEM OPT Reporting Requirements | Study in the States
+
+      Skip to main content
+
+Official website of the Department of Homeland Security
+
+      Translate this page
+
+      Translate this page
+
+          Menu
+
+      Translate this page
+
+            Students
+
+                    Go to Students Page
+
+                Popular Links
+
+                    Students and the Form I-20
+
+                    Maintaining Status
+
+                    Paying the I-901 SEVIS Fee
+
+                    Kindergarten to Grade 12 Students
+
+                    Applying for a Visa to Travel to the United States
+
+                    Training Opportunities in the United States
+
+            Schools
+
+                    Go to Schools Page
+
+                Popular Links
+
+                    What to Know about SEVP Certification
+
+                    Getting Started with SEVP Certification
+
+                    Updates to the Form I-17
+
+                    Maintaining Accurate SEVIS Records
+
+                    DSOs and the Form I-20
+
+                    Kindergarten to Grade 12 Schools
+
+            Blog
+
+October 21, 2026
+
+Fall Refresher for Students: Full Course of Study and Reduced Course Load
+
+As an F or M student attending a Student and Exchange Visitor Program (SEVP)-certified school, you must maintain your student 
+
+Read More >
+
+October 8, 2026
+DHS Publishes Proposed Rule Establishing Fees for Optional Practical Training
+Read More >
+
+September 24, 2026
+Community Colleges: An Overview for F and M Students
+Read More >
+
+      See All Blogs >
+
+                Blog
+
+            Tools
+
+                    Go to Tools Page
+
+                Popular Links
+
+                    School Search
+
+                    SEVIS Data Mapping Tool
+
+                    Guide to Studying in the States
+
+                    Resource Library
+
+                    School Certification Life Cycle
+
+            Help Hubs
+
+                    Go to Help Hubs
+
+                Popular Links
+
+                    SEVIS Help Hub
+
+                    SEVP Portal Help
+
+                    STEM OPT Hub
+
+                    SEVP Fraud Hub
+
+                    Filter
+
+STEM OPT Hub
+
+Breadcrumb
+
+                Home
+
+                STEM OPT Hub
+
+                DSOs: STEM OPT Reporting Requirements
+
+DSOs: STEM OPT Reporting Requirements
+
+Last updated: May 25, 2023
+
+Learn about Student and Exchange Visitor Information System (SEVIS) functionality related to STEM OPT extension provisions: 
+
+Updated functionality that allows DSOs to recommend STEM extensions for eligible students.
+
+Form I-983 Upload functionality.
+
+	Reporting Responsibility
+
+The DSO at the student’s school of most recent enrollment remains responsible for providing the Student and Exchange Visitor Program (SEVP) with access to the relevant information described in the Form I-983 upon request, as well as the student’s SEVIS record, even if the student intends to request an extension based on a previously obtained STEM degree from another SEVP-certified school.
+
+While the responsibility to report most information related to a student’s STEM OPT extension rests primarily with the student or employer, the student’s DSO remains responsible for continuing to help track the student in SEVIS and for providing DHS with timely access to reported information.
+
+	Determining Completeness of the Form I-983
+
+Before the DSO recommends that a student be granted a STEM OPT extension, the DSO must confirm that the student’s Form I-983, "Training Plan for STEM OPT Students,” is complete and signed, and that it addresses all program requirements.
+
+The DSO may not recommend a student for a STEM OPT extension if:
+
+The employer has not provided the required attestations.
+
+The completed Form I-983 does not reflect compliance with the relevant reporting, evaluation and other STEM OPT extension requirements.
+
+The DSO is not required to conduct additional outside research into a particular employer prior to making a STEM OPT recommendation, and is also not expected to possess technical knowledge of STEM fields of study. For more information about how to evaluate the Form I-983, please visit our DSOs and the Form I-983 page.
+
+	Validation of Student SEVIS Information
+
+A STEM OPT student must report to their DSO to confirm the validity of certain SEVIS information every six months, starting from the date the extension begins and ending when the student’s F-1 status ends or the 24-month OPT extension ends, whichever is first.
+
+As part of such reporting, STEM OPT students must confirm the validity of the following information:
+
+Legal name.
+
+Residential or mailing address.
+
+Employer name and address.
+
+Status of current employment/practical training experience.
+
+Separately, STEM OPT students must also report changes to this information within 10 days of the change, including any loss of employment.
+
+DSO Action: Use the Report OPT Employment link on the Student Information page to report the validation has been completed. ​
+
+	Record Keeping for the Form I-983
+
+The DSO is responsible for keeping and storing the Form I-983 and self-evaluations in the student’s record. The DSO may retain these documents in either electronic or hard copy, and they must be accessible to DHS within 30 days of submission to the DSO by the student. 
+
+Accordingly, DHS may request a copy of the Form I-983, in addition to other documentation, from the student, the employer or the student’s DSO. For more information about the annual self-evaluation, please visit our Form I-983 resources.
+
+Additionally, the student and employer are obligated to report to the student’s DSO any material changes to, or material deviations from, the student’s formal training plan by submitting a new Form I-983. For more information about what constitutes a material change, please visit the DSOs and the Form I-983 resource page.
+
+	Loss of Employment
+
+The employer and student must notify the relevant DSO when the student’s employment is terminated for any reason before the end of the authorized extension period.
+
+The employer must report such a change in employment to the appropriate DSO no later than five business days after the student’s employment terminates or the student has departed.
+
+An employer shall consider a student’s departure date as either:
+
+The date the employer knows the student has left the practical training opportunity.
+
+		OR
+
+The date after five consecutive business days have elapsed and the student has not reported for their practical training (without the employer’s consent), whichever date is earlier.
+
+The student must also report this change of employment information to the DSO within 10 days of the change.
+
+Employers and students can satisfy these requirements, if they wish, with an email to the DSO indicating that the student was terminated or has otherwise departed and indicating the applicable date of such termination or departure.
+
+	Changing Employers
+
+When a student changes employers, the new employer must be enrolled in E-Verify before the student begins to work for pay. The student must also submit a new Form I-983 to their DSO, and the DSO must review it for completeness and update SEVIS with a new recommendation. The STEM OPT student must submit this new Form I-983 to their DSO within 10 days of starting the new practical training opportunity.
+
+When a student begins a new practical training opportunity with a new employer less than 10 days after leaving the student’s prior employer, the student may fulfill all reporting obligations (loss of employment and new training plan) by submitting a new Form I-983. In cases where the period of time between employers is longer than 10 days, the student must first report the loss of employment to the DSO and later submit a new Form I-983.
+
+	Employer Noncompliance
+
+If a DSO believes that their STEM OPT student’s employer is not complying with the terms and conditions of the 24-month STEM OPT extension regulations, Form I-983 instructions and completed Form I-983, the DSO may contact SEVP at U.S. Immigration and Customs Enforcement (ICE) by following the instructions on ICE.gov. Additionally, violations of the regulation may also be reported through this Homeland Security Investigations tip form.
+
+Please note that if a student believes that their employer is not complying with the terms and conditions of the 24-month STEM OPT extension regulations and Form I-983 instructions, the student should leave that practical training opportunity and report their unemployment to the DSO. The student should be encouraged to report the employer’s noncompliance to SEVP at ICE by following the instructions found on ICE.gov. The student should also be assured that a period of unemployment caused by an employer’s noncompliance with the terms and conditions of the STEM OPT extension program requirements on its own will not affect the STEM OPT student’s status, so long as the student reports changes in employment status and adheres to the overall unemployment limits.
+
+Related Tags: STEM OPT
+
+STEM OPT Hub Navigation
+
+          For Students
+
+          For Schools
+
+          DSOs: Recommending Students for the STEM OPT Extension
+
+          DSOs: STEM OPT Reporting Requirements
+
+          DSOs and the Form I-983
+
+          For Employers
+
+          Employers and the Form I-983
+
+          Why STEM OPT is Good for Small Business
+
+          Employer Site Visits
+
+          Employers: STEM OPT Reporting Requirements
+
+          Additional Resources
+
+          Form I-983 Overview
+
+          STEM OPT Extension Overview
+
+          Eligible CIP Codes for the STEM OPT Extension
+
+          STEM OPT Frequently Asked Questions
+
+    Was This Helpful?
+
+Please provide feedback on this page.
+
+Yes 
+
+No 
+
+Why wasn't this helpful? 
+          Select an optionThe answer is confusingThe answer is incorrectI don't like how this feature worksOther
+
+Additional Feedback 
+
+About
+
+        About Study in the States
+
+        About SEVIS
+
+        Contact Us
+
+Help
+
+        Accessibility
+
+        Metrics
+
+        Privacy Policy
+
+        Site Index
+
+Partners
+
+        Department of State
+
+        Department of Education
+
+        Department of Commerce
+
+        Department of Labor
+
+        Department of Justice
+
+Footer Social
+
+        Facebook
+
+        Twitter
+
+        LinkedIn
+
+    Return to top

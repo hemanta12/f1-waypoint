@@ -1,0 +1,189 @@
+[
+  {
+    "doc_id": "uscis-opt",
+    "module_id": "opt_stem",
+    "title": "Optional Practical Training (OPT) for F-1 Students",
+    "source_url": "https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "8e684d40bfbc3fe7a11b2039ad89134f7fa7eb2b34007a6ec6e2b093c9251957",
+    "status": "active"
+  },
+  {
+    "doc_id": "uscis-stem-opt",
+    "module_id": "opt_stem",
+    "title": "Optional Practical Training Extension for STEM Students (STEM OPT)",
+    "source_url": "https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-extension-for-stem-students-stem-opt",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "e82b4560bb210a678efa66f6e44099eca0d80440f7f437dc7fde1f33c0d274e7",
+    "status": "active"
+  },
+  {
+    "doc_id": "uscis-policy-manual-practical-training",
+    "module_id": "opt_stem",
+    "title": "Policy Manual Volume 2, Part F, Chapter 5 - Practical Training",
+    "source_url": "https://www.uscis.gov/policy-manual/volume-2-part-f-chapter-5",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "4fc13d46d85eba4e841fc528456336e8679a711da49ac8378cde73986d6de79e",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-stem-opt-extension-overview",
+    "module_id": "opt_stem",
+    "title": "STEM OPT Extension Overview",
+    "source_url": "https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/stem-opt-extension-overview",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "9469dff1a0d47a36ccbddc777f0b97dede5ed5274dee1e3e85c1e5f08c7be780",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-students-and-form-i-983",
+    "module_id": "opt_stem",
+    "title": "Students and the Form I-983",
+    "source_url": "https://studyinthestates.dhs.gov/stem-opt-hub/for-students/students-and-the-form-i-983",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "30ee83af70d77284b417e23c856c0a94452a5c2628bfd035add9d476e334b5af",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-form-i-983-overview",
+    "module_id": "opt_stem",
+    "title": "Form I-983 Overview",
+    "source_url": "https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/form-i-983-overview",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "d99bfe3aeb6d3d31bef80b06e9e5e4d2cb445d9980d68f113815718254ac6e5c",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-student-stem-opt-reporting",
+    "module_id": "opt_stem",
+    "title": "Students: STEM OPT Reporting Requirements",
+    "source_url": "https://studyinthestates.dhs.gov/stem-opt-hub/for-students/students-stem-opt-reporting-requirements",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "ff26f7773cb879ded798ad2fe36e56ba6195ec6a03814c33b631a6d5386fc2fc",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-dso-stem-opt-reporting",
+    "module_id": "opt_stem",
+    "title": "DSOs: STEM OPT Reporting Requirements",
+    "source_url": "https://studyinthestates.dhs.gov/stem-opt-hub/for-schools/dsos-stem-opt-reporting-requirements",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "6a847c85ba9be81e8e0f5534bc4f7d4193d2e67988a3392235a289189a3c8c6f",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-unemployment-counter",
+    "module_id": "opt_stem",
+    "title": "Unemployment Counter",
+    "source_url": "https://studyinthestates.dhs.gov/sevis-help-hub/student-records/fm-student-employment/unemployment-counter",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "ffeed7680c5f3de9efb24489bf0fcd81b6f2be333b6b534d120865ba91cd2389",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-sevp-portal-overview",
+    "module_id": "opt_stem",
+    "title": "SEVP Portal Overview",
+    "source_url": "https://studyinthestates.dhs.gov/sevp-portal-help/getting-started/sevp-portal-overview",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "eb5c5061fb7d425ff32fa9152c2536cb2050230aa8700aff6b3f3235818b8832",
+    "status": "active"
+  },
+  {
+    "doc_id": "ice-form-i-983",
+    "module_id": "opt_stem",
+    "title": "Form I-983, Training Plan for STEM OPT Students",
+    "source_url": "https://www.ice.gov/doclib/sevis/pdf/i983.pdf",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "2e61092d1e104627fa50d1871d41a31450c4e3242e483dcd820f44c799ea05e6",
+    "status": "active"
+  },
+  {
+    "doc_id": "ice-form-i-983-instructions",
+    "module_id": "opt_stem",
+    "title": "Completing the Form I-983 Training Plan for STEM OPT Students",
+    "source_url": "https://www.ice.gov/doclib/sevis/pdf/i983Instructions.pdf",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "c6322516f9bf765d5213bd931636d70e5fe2836be51216729bd6c66850943d71",
+    "status": "active"
+  },
+  {
+    "doc_id": "ecfr-8-cfr-214-2",
+    "module_id": "opt_stem",
+    "title": "8 CFR 214.2 - Special requirements for admission, extension, and maintenance of status",
+    "source_url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/subpart-A/section-214.2",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "4577a862eacc9702edbbbc973661df762ec897526a336c2774648716efab6fd6",
+    "status": "active"
+  },
+  {
+    "doc_id": "dhs-stem-opt-faq",
+    "module_id": "opt_stem",
+    "title": "STEM OPT Frequently Asked Questions",
+    "source_url": "https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/stem-opt-frequently-asked-questions",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "073ca8f3800af12a38cbb04f5b74d5af08e00d9b94b60831f88236c2196cafd8",
+    "status": "active"
+  },
+  {
+    "doc_id": "ice-practical-training",
+    "module_id": "opt_stem",
+    "title": "Practical Training",
+    "source_url": "https://www.ice.gov/sevis/practical-training",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "d884c1ea00c8c08303e680940fe43bad930d4b4c4b69978d8ac9a92f8f9893ed",
+    "status": "active"
+  },
+  {
+    "doc_id": "ice-opt-direct-relationship-guidance",
+    "module_id": "opt_stem",
+    "title": "SEVP Policy Guidance: Practical Training - Determining a Direct Relationship Between Employment and Degree",
+    "source_url": "https://www.ice.gov/doclib/sevis/pdf/optDirectlyRelatedGuidance.pdf",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "94cbbcfd4f963fc23957c649901140963e5385c7704dde0e48da31416944969a",
+    "status": "active"
+  },
+  {
+    "doc_id": "uscis-i-765-instructions",
+    "module_id": "opt_stem",
+    "title": "Instructions for Form I-765, Application for Employment Authorization",
+    "source_url": "https://www.uscis.gov/sites/default/files/document/forms/i-765instr.pdf",
+    "source_tier": "official",
+    "retrieved_at": "2026-11-05",
+    "verified_on": "2026-11-05",
+    "content_hash": "1473e5b4ebbb4e6d1b215d24073ba857fb63490f71eebba6ff1cddce9784560b",
+    "status": "active"
+  }
+]

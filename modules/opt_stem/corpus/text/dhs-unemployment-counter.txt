@@ -1,0 +1,516 @@
+Unemployment Counter | Study in the States
+
+      Skip to main content
+
+Official website of the Department of Homeland Security
+
+      Translate this page
+
+      Translate this page
+
+          Menu
+
+      Translate this page
+
+            Students
+
+                    Go to Students Page
+
+                Popular Links
+
+                    Students and the Form I-20
+
+                    Maintaining Status
+
+                    Paying the I-901 SEVIS Fee
+
+                    Kindergarten to Grade 12 Students
+
+                    Applying for a Visa to Travel to the United States
+
+                    Training Opportunities in the United States
+
+            Schools
+
+                    Go to Schools Page
+
+                Popular Links
+
+                    What to Know about SEVP Certification
+
+                    Getting Started with SEVP Certification
+
+                    Updates to the Form I-17
+
+                    Maintaining Accurate SEVIS Records
+
+                    DSOs and the Form I-20
+
+                    Kindergarten to Grade 12 Schools
+
+            Blog
+
+October 21, 2026
+
+Fall Refresher for Students: Full Course of Study and Reduced Course Load
+
+As an F or M student attending a Student and Exchange Visitor Program (SEVP)-certified school, you must maintain your student 
+
+Read More >
+
+October 8, 2026
+DHS Publishes Proposed Rule Establishing Fees for Optional Practical Training
+Read More >
+
+September 24, 2026
+Community Colleges: An Overview for F and M Students
+Read More >
+
+      See All Blogs >
+
+                Blog
+
+            Tools
+
+                    Go to Tools Page
+
+                Popular Links
+
+                    School Search
+
+                    SEVIS Data Mapping Tool
+
+                    Guide to Studying in the States
+
+                    Resource Library
+
+                    School Certification Life Cycle
+
+            Help Hubs
+
+                    Go to Help Hubs
+
+                Popular Links
+
+                    SEVIS Help Hub
+
+                    SEVP Portal Help
+
+                    STEM OPT Hub
+
+                    SEVP Fraud Hub
+
+                    Filter
+
+SEVIS Help Hub
+
+Unemployment Counter
+
+Breadcrumb
+
+                Home
+
+                SEVIS Help Hub
+
+                Student Records
+
+                F/M Student Employment
+
+                Unemployment Counter
+
+Unemployment Counter
+
+    Last updated: July 27, 2026
+
+Quick Links:
+General Information
+SEVIS Unemployment Counter
+
+    Expand All | Collapse All
+
+        General Information
+
+Federal law limits how long F-1 students on post-completion optional practical training (OPT) or science, technology, engineering, and mathematics (STEM) OPT can be unemployed. The limits are:
+
+Post-completion OPT: 90 days.
+
+STEM OPT: 150 days, which includes any days accrued while on post-completion OPT.
+
+8 CFR 214.2(f)(10)(ii)(E) – Periods of unemployment during post-completion
+
+SEVIS counts the unemployment days for these students by using employer data to:
+
+Look back to the Actual OPT Start Date for that period of OPT.
+
+Count each day without employer information.
+
+        SEVIS Unemployment Counter
+
+To view the number of days of unemployment for a student on OPT:
+
+1. Go to the Student Information page. 
+
+2. Select Employment Information link under the View list on the left side of page. The Employment Information page opens. 
+
+The Unemployment Counter for Active Employment ID XXX table displays days allowed, accrued, and remaining for the active period of post-completion OPT or STEM OPT, which are both identified by the Employment ID.
+
+Days Allowed: Total number of days allowed for unemployment, during the entire employment period:
+
+Post-completion OPT-only: 90 days
+
+Post-completion OPT and STEM OPT: 150 days
+
+Days Accrued: Total number of unemployment days thus far, during the employment period.
+
+          Note: For STEM OPT, this includes any days accrued while on post completion OPT.
+
+Days Remaining: Total number of allowed unemployment days remaining.
+
+3. Click the green icon to expand the period of OPT and view the unemployment counter. The Accrued Days of Unemployment field for that period of OPT displays on the right.
+
+For additional related information, see SEVIS Help Hub articles:
+
+F-1 Add, Edit, Delete Optional Practical Training (OPT) Employer 
+
+SEVIS and the SEVP Portal 
+
+View Employment Information
+
+SEVIS Help Hub Navigation
+
+          Student Records
+
+          Classification of Instructional Programs (CIP)
+
+          Dependents
+
+          Print Dependent's Form I-20
+
+          Managing Dependents Overview
+
+          View Dependent
+
+          Add Dependent
+
+          Update Dependent
+
+          Terminate or Reactivate a Dependent
+
+          Request/Authorization Details
+
+          Sample Form I-20
+
+          Student Information
+
+          Certificates of Eligibility
+
+          Reinstatement COE (Form I-20)
+
+          COE (Form I-20) Mass Reprint
+
+          Change Education Level
+
+          Create Initial COE (Form I-20)
+
+          Reprint Form I-20
+
+          SEVIS Remarks on the COE (Form I-20)
+
+          Completions and Terminations
+
+          Complete Student SEVIS Status
+
+          Terminate a Student
+
+          Termination Reasons
+
+          Corrections and Correction Requests
+
+          Correction Requests Overview
+
+          PDSO Record Correction
+
+          Change a Completed or Cancelled Record to Terminated
+
+          Correction Requests
+
+          Program Dates
+
+          Change to Student Status
+
+          Change to Termination Reason
+
+          Correct SEVIS Status of USCIS Request User Guide
+
+          Upload Evidence for Correction Requests
+
+          F/M Status
+
+          F-1 Cap Gap Extension
+
+          F/M SEVIS Statuses
+
+          F/M Student Employment
+
+          Planning Tool for 24-Month Extension of STEM OPT
+
+          Planning Tool for Post Completion OPT
+
+          Student Employment Overview
+
+          View Employment Information
+
+          Unemployment Counter
+
+          F-1 Off Campus Employment and International Organization Internship
+
+          F-1 Curricular Practical Training (CPT)
+
+          F-1 Optional Practical Training (OPT)
+
+          F-1 Add, Edit, Delete Optional Practical Training (OPT) Employer
+
+          F-1 STEM Optional Practical Training (OPT) Extension
+
+          M-1 Practical Training
+
+          SEVIS and the SEVP Portal
+
+          SEVP Portal Email Notices to Students
+
+          Manage Program Dates, Registration and Course Load
+
+          Manage Initial Program and Session Dates
+
+          Mass Registration
+
+          Registration
+
+          Understanding SEVIS Program and Session Dates
+
+          Extending the F-1 Form I-20
+
+          Extending the M-1 Form I-20
+
+          Reduced Course Load
+
+          Shorten Program
+
+          Cancel SEVIS Record in Initial Status
+
+          Transfers
+
+          Complete Transfer of F-1 SEVIS Record
+
+          Complete Transfer of M-1 SEVIS Record
+
+          Manage Transfer of F-1 SEVIS Record
+
+          Manage Transfer of M-1 SEVIS Record
+
+          Initiate Transfer of F-1 SEVIS Record
+
+          Initiate Transfer of M-1 SEVIS Record
+
+          Initiate Transfer for Students in Initial Status
+
+          Update Student Records
+
+          Financial Information
+
+          Personal Information
+
+          Program Information
+
+          Travel, Passport, and Visa Information
+
+          Report School Disciplinary Action as Result of Student Crime Conviction
+
+          Student Event History
+
+          SEVIS Basics
+
+          Key SEVIS Pages
+
+          Elements of SEVIS Pages
+
+          Broadcast Messages
+
+          Nonimmigrant Search
+
+          Alerts and Lists
+
+          Listing of Schools
+
+          Mass Actions
+
+          SEVIS Downloads
+
+          Reports
+
+          Student Report for School Officials
+
+          DSO Reports
+
+          System Access and Security
+
+          Terms and Conditions of Accessing SEVIS
+
+          SEVIS Passwords
+
+          Log In and Out of SEVIS
+
+          System Actions and Messages
+
+          Error Messages
+
+          System Data Entry Standards
+
+          Name Standards
+
+          Address Standards
+
+          Email Standards
+
+          Name Fields Job Aid
+
+          SEVIS Help Icons Job Aid
+
+          SEVIS Computer Troubleshooting Tips
+
+          School Records
+
+          Request to Merge SEVIS Usernames
+
+          Sample Form I-17
+
+          School Information
+
+          School History
+
+          School Certification
+
+          Form I-17 Listing of Available Degrees
+
+          SEVIS Job Aid: Update School Officials Process Flow Sketches
+
+          SEVIS Job Aid: Update School Officials
+
+          Form I-17 - Initial Certification
+
+          Generating a SEVIS User Passkey
+
+          Update School Information
+
+          Form I-17 Petition Update - Overview
+
+          Form I-17 Petition Update - Contact Information
+
+          Form I-17 Petition Update - Programs of Study
+
+          Form I-17 Petition Update - Accreditations and Recognitions
+
+          Form I-17 Petition Update - School Calendar, Cost and Demographics
+
+          Form I-17 Petition Update - Instructional Sites (Campuses)
+
+          Form I-17 Petition Update - Manage School Officials
+
+          Form I-17 Petition Update - Submit
+
+          Form I-17 Petition Update - Add-Remove Program Degrees
+
+          Form I-17 - Recertification
+
+          Form I-17: Upload Evidence
+
+          Form I-17 - Pay Fees
+
+          Filing an Appeal or Motion - Pay Fees
+
+          School Comparison Chart: Full Course of Study and Employment
+
+          PDSO and DSO Role Comparison
+
+          PDSO/DSO Annual Verification
+
+          Form I-17 - View and Print
+
+Icon Guide
+
+See the SEVIS Help Icons on the SEVIS Help Hub for a quick-reference of the icons used in this user guide.
+
+I'm Looking For
+
+      Translate this page
+
+Contact Us
+
+SEVP Response Center
+
+703-603-3400
+
+Monday - Friday 
+
+8:00 a.m. to 6:00 p.m. ET,
+
+except holidays
+
+SEVP@ice.dhs.gov
+
+ICE Tip Line
+
+1-866-DHS-2-ICE
+
+    Was This Helpful?
+
+Please provide feedback on this page.
+
+Yes 
+
+No 
+
+Why wasn't this helpful? 
+          Select an optionThe answer is confusingThe answer is incorrectI don't like how this feature worksOther
+
+Additional Feedback 
+
+About
+
+        About Study in the States
+
+        About SEVIS
+
+        Contact Us
+
+Help
+
+        Accessibility
+
+        Metrics
+
+        Privacy Policy
+
+        Site Index
+
+Partners
+
+        Department of State
+
+        Department of Education
+
+        Department of Commerce
+
+        Department of Labor
+
+        Department of Justice
+
+Footer Social
+
+        Facebook
+
+        Twitter
+
+        LinkedIn
+
+    Return to top

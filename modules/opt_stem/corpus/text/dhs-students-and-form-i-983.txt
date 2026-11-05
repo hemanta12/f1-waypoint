@@ -1,0 +1,290 @@
+Students and the Form I-983 | Study in the States
+
+      Skip to main content
+
+Official website of the Department of Homeland Security
+
+      Translate this page
+
+      Translate this page
+
+          Menu
+
+      Translate this page
+
+            Students
+
+                    Go to Students Page
+
+                Popular Links
+
+                    Students and the Form I-20
+
+                    Maintaining Status
+
+                    Paying the I-901 SEVIS Fee
+
+                    Kindergarten to Grade 12 Students
+
+                    Applying for a Visa to Travel to the United States
+
+                    Training Opportunities in the United States
+
+            Schools
+
+                    Go to Schools Page
+
+                Popular Links
+
+                    What to Know about SEVP Certification
+
+                    Getting Started with SEVP Certification
+
+                    Updates to the Form I-17
+
+                    Maintaining Accurate SEVIS Records
+
+                    DSOs and the Form I-20
+
+                    Kindergarten to Grade 12 Schools
+
+            Blog
+
+October 21, 2026
+
+Fall Refresher for Students: Full Course of Study and Reduced Course Load
+
+As an F or M student attending a Student and Exchange Visitor Program (SEVP)-certified school, you must maintain your student 
+
+Read More >
+
+October 8, 2026
+DHS Publishes Proposed Rule Establishing Fees for Optional Practical Training
+Read More >
+
+September 24, 2026
+Community Colleges: An Overview for F and M Students
+Read More >
+
+      See All Blogs >
+
+                Blog
+
+            Tools
+
+                    Go to Tools Page
+
+                Popular Links
+
+                    School Search
+
+                    SEVIS Data Mapping Tool
+
+                    Guide to Studying in the States
+
+                    Resource Library
+
+                    School Certification Life Cycle
+
+            Help Hubs
+
+                    Go to Help Hubs
+
+                Popular Links
+
+                    SEVIS Help Hub
+
+                    SEVP Portal Help
+
+                    STEM OPT Hub
+
+                    SEVP Fraud Hub
+
+                    Filter
+
+STEM OPT Hub
+
+Breadcrumb
+
+                Home
+
+                STEM OPT Hub
+
+                Students and the Form I-983
+
+Students and the Form I-983
+
+Last updated: November 26, 2024
+
+Before applying to USCIS for a STEM OPT extension, a STEM OPT student must download, complete, sign and submit the Form I-983 to their DSO. The STEM OPT student and their prospective employer must work together to complete this form. STEM OPT students and their employers are subject to the terms of the 24-month STEM OPT extension regulations and Form I-983 instructions, effective as of the start date requested for STEM OPT, as indicated on the form.
+
+Students are responsible for facilitating the completion of this form, submitting it with their STEM OPT application and returning it to their DSO, who will keep it in the student’s record. DHS maintains the discretion to request and review all documentation for eligibility concerns.
+
+The STEM OPT student must complete Section 1 of the Form I-983 and work with their prospective employer to complete Sections 2-6. For more information about these sections, please visit the Employers and the Form I-983 resource page. STEM OPT students are also responsible for completing annual self-evaluations, described below.
+
+Overview of Form I-983 Section 1
+
+The STEM OPT student is responsible for completing Section 1 of the Form I-983. Section 1 requires information about both STEM OPT students and the Student and Exchange Visitor Program (SEVP)-certified schools they attend. 
+
+In Section 1, STEM OPT students must include their full name (surname/primary name/given name) exactly as it appears on their Form I-20, “Certificate of Eligibility for Nonimmigrant Student Status,” and as it appears in the Student and Exchange Visitor Information System (SEVIS). The student must also provide their current SEVIS ID number, even if the student earned the qualifying degree on a previously issued SEVIS ID number.
+
+In addition to providing information about both their SEVP-certified school and qualifying STEM degree on the Form I-983, STEM OPT students must also document the time period for which they are applying to be authorized to work on STEM OPT, regardless if the authorized dates match the actual training dates.
+
+It is important to note, the STEM OPT extension may not end more than 24 months after the scheduled termination of the student’s EAD for the current post-completion OPT. For students on regular OPT and applying for their STEM OPT extension, this start date should be the day after your current 12-month OPT ends.  For more information about applying for STEM OPT, please visit the USCIS website.  
+
+SEVP-Certified School Information for Section 1 
+
+Students need to work with their DSO to ensure they properly capture information about the SEVP-certified schools they attended on the Form I-983.
+
+The following information must be captured on the form:
+
+Name of the school recommending STEM OPT. 
+
+This is the name of the student’s most recently enrolled SEVP-certified school. This school should be the same one that employs the DSO responsible for managing the student’s record and recommending STEM OPT.
+
+Name of school where the student’s STEM degree was earned. 
+
+This is the name of the SEVP-certified school from which the student earned their qualifying STEM degree. Please note, this may or may not be the same as the school recommending the STEM OPT if the student is using a prior STEM degree. Please visit our student eligibility requirements page for information about this topic.
+
+SEVIS school code for the SEVP-certified school that is recommending the student’s STEM OPT (including the three-digit suffix). 
+
+Students should work with their DSO to ensure they have the correct SEVIS school code. Remember, this code is for the SEVP-certified school where the student was most recently enrolled, and may not be the same as the school where the student earned their qualifying STEM degree.
+
+DSO’s contact information, including the school official’s full name, telephone number and email address. 
+
+This information must be for the DSO who is submitting the STEM OPT recommendation and is responsible for maintaining the student’s record (including processing the completed and signed Form I-983).
+
+Qualifying STEM Degree Information for Section 1
+
+In addition, students need to properly capture information about their academic history in STEM on the Form I-983.
+
+The following information must be captured on the form:
+
+Student’s major that qualifies him or her for the STEM OPT extension, as well as the degree’s CIP code. 
+
+Visit the Eligible CIP Codes for the STEM OPT Extension page for a complete list and explanation of the STEM OPT extension qualifying degrees.
+
+Degree level for which the student is basing the STEM OPT extension, for example, if this application is using a bachelor’s, master’s or doctorate degree. 
+
+Please note, only students who have earned a bachelor’s degree or higher in a STEM field are eligible for the STEM OPT extension. For more information about STEM OPT qualifiers and degrees, please visit the STEM OPT Extension Overview resource page.
+
+Date the student earned the qualifying STEM degree.
+
+Please note, students are only eligible to apply for a STEM OPT extension on an existing period of post-completion practical training.
+
+Whether this STEM OPT extension is based on a prior degree. 
+
+If it is, this means that the student’s STEM OPT extension application is not based on the same degree the student is currently using to complete post-completion OPT. If it is not, this means that the student is applying for the STEM OPT extension based on their most recently obtained degree and current post-completion OPT opportunity. For more information about the rules and regulations associated with using a prior degree to qualify for the STEM OPT extension, please visit our student eligibility resource page.
+
+Evaluation of Student Progress
+
+The student must complete the first “Evaluation of Student Progress” portion of the Form I-983, “Training Plan for STEM OPT Students” within 12 months of the listed STEM OPT start date. At the end of the STEM OPT extension, a student must conduct a second, final assessment.
+
+The student must submit the 12-month and final evaluations no later than 10 days following the conclusion of the appropriate reporting period. If an opportunity ends early the student must submit the final evaluation within 10 days following the conclusion of the opportunity. When a student changes employers, they must submit their final Form I-983 self-evaluation within 10 days of ending employment with their current employer. Not submitting a final evaluation would be a violation of the terms of the Form I-983 and may jeopardize the student’s nonimmigrant status.
+
+To complete these self-evaluations, the student needs to specify the evaluation date range (i.e., the timeline considered during the evaluation) and:
+
+Assess their overall performance using the measures identified in the agreed upon training plan.
+
+Evaluate their success in applying and acquiring the new knowledge, skills and competencies that were previously identified in the plan.
+
+Discuss accomplishments, successful projects, overall contributions, etc., that occurred during the specified review period.
+
+Address whether there are any modifications to the objectives and goals for projects or new areas for skill and competency development.
+
+Once the evaluations are complete, the student must collect signatures from their employer and return the form to their DSO, who will keep it in the student’s student record. The student submits the first signed assessment to their DSO within 12 months of the start date listed on the form. The student needs to submit a second and final evaluation that recaps all the training and knowledge acquired during the complete training period to their DSO at the end of the STEM OPT extension.
+
+For more information about the Form I-983 and the formal training plan requirement for STEM OPT extension, visit the Form I-983 Overview. 
+
+Related Tags: STEM OPT
+
+STEM OPT Hub Navigation
+
+          For Students
+
+          Students: Determining STEM OPT Extension Eligibility
+
+          Students: STEM OPT Reporting Requirements
+
+          Students and the Form I-983
+
+          For Schools
+
+          DSOs: Recommending Students for the STEM OPT Extension
+
+          DSOs: STEM OPT Reporting Requirements
+
+          DSOs and the Form I-983
+
+          For Employers
+
+          Employers and the Form I-983
+
+          Why STEM OPT is Good for Small Business
+
+          Employer Site Visits
+
+          Employers: STEM OPT Reporting Requirements
+
+          Additional Resources
+
+          Form I-983 Overview
+
+          STEM OPT Extension Overview
+
+          Eligible CIP Codes for the STEM OPT Extension
+
+          STEM OPT Frequently Asked Questions
+
+    Was This Helpful?
+
+Please provide feedback on this page.
+
+Yes 
+
+No 
+
+Why wasn't this helpful? 
+          Select an optionThe answer is confusingThe answer is incorrectI don't like how this feature worksOther
+
+Additional Feedback 
+
+About
+
+        About Study in the States
+
+        About SEVIS
+
+        Contact Us
+
+Help
+
+        Accessibility
+
+        Metrics
+
+        Privacy Policy
+
+        Site Index
+
+Partners
+
+        Department of State
+
+        Department of Education
+
+        Department of Commerce
+
+        Department of Labor
+
+        Department of Justice
+
+Footer Social
+
+        Facebook
+
+        Twitter
+
+        LinkedIn
+
+    Return to top
