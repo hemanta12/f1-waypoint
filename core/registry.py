@@ -40,10 +40,13 @@ def load_sources(path: Path) -> list[Source]:
     return sources
 
 
-def hash_text(text: str) -> str:
+def normalize_text(text: str) -> str:
     # Collapse whitespace so reflowed markup with identical words is not a "change".
-    normalized = re.sub(r"\s+", " ", text).strip()
-    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def hash_text(text: str) -> str:
+    return hashlib.sha256(normalize_text(text).encode("utf-8")).hexdigest()
 
 
 def apply_refetch(doc: Document, new_text: str, today: date) -> Document:
