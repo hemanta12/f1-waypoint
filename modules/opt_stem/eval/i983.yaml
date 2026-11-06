@@ -1,0 +1,52 @@
+- id: i983-first-evaluation
+  category: i983
+  question: when is my first I-983 self evaluation due on STEM OPT
+  should_refuse: false
+  expected_facts: ["within 12 months of the STEM OPT start date"]
+  gold:
+    - doc_id: dhs-form-i-983-overview
+      section: Evaluation of Student Progress
+      quote: The student must submit the first assessment within 12 months of the STEM OPT start date
+
+- id: i983-final-evaluation-leaving-job
+  category: i983
+  question: im leaving my STEM OPT job for a new one, do i owe my old employer a final evaluation
+  should_refuse: false
+  expected_facts: ["final Form I-983 self-evaluation", "within 10 days of ending employment"]
+  gold:
+    - doc_id: dhs-students-and-form-i-983
+      section: Evaluation of Student Progress
+      quote: When a student changes employers, they must submit their final Form I-983 self-evaluation within 10 days of ending employment with their current employer.
+
+- id: i983-new-employer
+  category: i983
+  question: started a new job on STEM OPT, how long do i have to get the new I-983 to my DSO
+  should_refuse: false
+  expected_facts: ["new Form I-983", "within 10 days of starting"]
+  gold:
+    - doc_id: dhs-dso-stem-opt-reporting
+      section: Changing Employers
+      quote: The STEM OPT student must submit this new Form I-983 to their DSO within 10 days of starting the new practical training opportunity.
+
+- id: i983-pay-cut-material-change
+  category: i983
+  question: my company cut my salary but my hours stayed the same, does that count as a material change on my I-983
+  should_refuse: false
+  expected_facts: ["reduction in student compensation that is not tied to a reduction in hours worked", "report to the DSO"]
+  gold:
+    - doc_id: dhs-form-i-983-overview
+      section: Material Changes
+      quote: Any reduction in student compensation that is not tied to a reduction in hours worked.
+    - doc_id: dhs-form-i-983-overview
+      section: Material Changes
+      quote: Both STEM OPT students and employers are obligated to report to the DSO material changes to, or material deviations from, the student’s formal training plan.
+
+- id: i983-who-fills-sections
+  category: i983
+  question: which parts of the I-983 do i fill out and which parts does my employer do
+  should_refuse: false
+  expected_facts: ["Section 1", "Sections 2-6"]
+  gold:
+    - doc_id: dhs-students-and-form-i-983
+      section: Completing the Form I-983
+      quote: The STEM OPT student must complete Section 1 of the Form I-983 and work with their prospective employer to complete Sections 2-6.

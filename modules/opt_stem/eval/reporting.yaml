@@ -1,0 +1,149 @@
+- id: stem-address-change
+  category: reporting
+  question: im on STEM OPT and i moved apartments, how long do i have to tell someone
+  should_refuse: false
+  expected_facts: ["within 10 days", "DSO"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Student Reporting Responsibilities
+      quote: Report changes to the following information to your DSO within 10 days of the change
+
+- id: opt-what-to-report
+  category: reporting
+  question: on regular OPT what changes do i have to report and how fast
+  should_refuse: false
+  expected_facts: ["name, address, employer and loss of employment", "within 10 days"]
+  gold:
+    - doc_id: ice-practical-training
+      section: 24-Month STEM OPT Extension
+      quote: You must report changes in name, address, employer and loss of employment to your DSO within 10 days of any change.
+
+- id: stem-validation-no-change
+  category: reporting
+  question: nothing changed with my job, do i still have to do the 6 month STEM check in
+  should_refuse: false
+  expected_facts: ["every 6 months", "even if none of your information has changed"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Student Reporting Responsibilities
+      quote: Report to your DSO every 6 months to confirm the information listed above, even if none of your information has changed.
+
+- id: stem-validation-contents
+  category: reporting
+  question: what exactly am i confirming in the six month STEM OPT validation
+  should_refuse: false
+  expected_facts: ["Legal name", "Residential or mailing address", "Employer name and address", "Status of current employment"]
+  gold:
+    - doc_id: dhs-student-stem-opt-reporting
+      section: Validating SEVIS Information
+      quote: "As part of this six-month reporting, STEM OPT students must confirm that their SEVIS information correctly identifies their: Legal name. Residential or mailing address. Employer name and address. Status of current employment."
+
+- id: stem-validation-reminder
+  category: reporting
+  question: will anyone remind me before my STEM validation report is due
+  should_refuse: false
+  expected_facts: ["30 days"]
+  gold:
+    - doc_id: dhs-student-stem-opt-reporting
+      section: Validating SEVIS Information
+      quote: SEVP Portal users will receive a reminder via email 30 days before any validation report is due.
+
+- id: stem-job-loss
+  category: reporting
+  question: i got laid off while on STEM OPT, how soon do i need to report it
+  should_refuse: false
+  expected_facts: ["loss of employment", "within 10 days"]
+  gold:
+    - doc_id: dhs-student-stem-opt-reporting
+      section: Validating SEVIS Information
+      quote: STEM OPT students must report a change in this information, including any loss of employment, within 10 days of the change.
+
+- id: stem-email-change
+  category: reporting
+  question: do i have to report a new email address when im on STEM OPT
+  should_refuse: false
+  expected_facts: ["Your email address", "within 10 days"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Student Reporting Responsibilities
+      quote: "Report changes to the following information to your DSO within 10 days of the change, specifically: Your legal name; Your residential or mailing address; Your email address;"
+
+- id: stem-portal-new-employer
+  category: reporting
+  question: on STEM OPT can i just add my new employer in the SEVP portal myself
+  should_refuse: false
+  expected_facts: ["not be able to add a new employer"]
+  gold:
+    - doc_id: dhs-sevp-portal-overview
+      section: Functionality
+      quote: STEM OPT students are not be able to add a new employer or change the start date with their employer but can update other information about an employer already in the system.
+
+- id: portal-what-can-update
+  category: reporting
+  question: what can i update myself in the SEVP portal on OPT
+  should_refuse: false
+  expected_facts: ["mailing addresses", "telephone numbers", "employer information"]
+  gold:
+    - doc_id: dhs-sevp-portal-overview
+      section: Functionality
+      quote: update their physical home addresses, mailing addresses, telephone numbers, employer information and monitor their employment authorization
+
+- id: portal-still-need-dso
+  category: reporting
+  question: if i use the SEVP portal do i still need to deal with my DSO at all
+  should_refuse: false
+  expected_facts: ["does not eliminate the need"]
+  gold:
+    - doc_id: dhs-sevp-portal-overview
+      section: SEVP Portal Overview
+      quote: The SEVP Portal does not eliminate the need for a student to communicate with their DSO.
+
+- id: portal-sevis-sync
+  category: reporting
+  question: i changed my address in the SEVP portal, how long until SEVIS has it
+  should_refuse: false
+  expected_facts: ["sent immediately to SEVIS"]
+  gold:
+    - doc_id: dhs-sevp-portal-overview
+      section: SEVIS and the SEVP Portal Information Sharing
+      quote: Data entered into the portal is sent immediately to SEVIS to update the student’s record.
+
+- id: portal-pre-completion
+  category: reporting
+  question: im on pre-completion OPT, can i use the SEVP portal to report my job
+  should_refuse: false
+  expected_facts: ["post-completion OPT", "only users of the SEVP Portal"]
+  gold:
+    - doc_id: dhs-sevp-portal-overview
+      section: Users
+      quote: F-1 students participating in post-completion OPT (including those on a science, technology, engineering and mathematics (STEM) extension) and M-1 students participating in practical training are the only users of the SEVP Portal.
+
+- id: stem-gap-between-employers
+  category: reporting
+  question: switching STEM OPT jobs with a three week gap in between, what do i report first
+  should_refuse: false
+  expected_facts: ["longer than 10 days", "report the loss of employment to the DSO"]
+  gold:
+    - doc_id: dhs-student-stem-opt-reporting
+      section: Changing Employers
+      quote: In cases where the period of time between employers is longer than 10 days, the student must first report the loss of employment to the DSO and later submit a new Form I-983.
+
+- id: stem-employer-reports-termination
+  category: reporting
+  question: if i quit my STEM OPT job does my employer have to tell anyone
+  should_refuse: false
+  expected_facts: ["termination of employment or departure", "5 business days"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: STEM OPT Employer Requirements and Responsibilities
+      quote: Report the STEM OPT student’s termination of employment or departure to the DSO within 5 business days.
+
+- id: stem-employer-noncompliance
+  category: reporting
+  question: my STEM OPT employer isnt following my training plan, who do i report them to
+  should_refuse: false
+  expected_facts: ["Student and Exchange Visitor Program"]
+  gold:
+    - doc_id: dhs-student-stem-opt-reporting
+      section: Employer Noncompliance
+      quote: Contact the Student and Exchange Visitor Program at the U.S. Immigration and Customs Enforcement (ICE) by following the instructions found on ICE.gov.

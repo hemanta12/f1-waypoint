@@ -1,0 +1,49 @@
+- id: employer-everify-required
+  category: employer
+  question: we want to hire a grad on STEM OPT, does our company have to use E-Verify
+  should_refuse: false
+  expected_facts: ["enrolled in and remain in good standing with the E-Verify"]
+  gold:
+    - doc_id: dhs-stem-opt-faq
+      section: Employers
+      quote: As an employer, you must be enrolled in and remain in good standing with the E-Verify electronic eligibility verification program
+
+- id: employer-mentor
+  category: employer
+  question: do we have to assign a mentor to our STEM OPT hire
+  should_refuse: false
+  expected_facts: ["not required to provide a mentor", "supervised and evaluated"]
+  gold:
+    - doc_id: dhs-stem-opt-faq
+      section: Employers
+      quote: Employers are not required to provide a mentor to STEM OPT participants. However, each employer must describe on the Form I-983 how the STEM OPT participant will be supervised and evaluated.
+
+- id: employer-site-visit-notice
+  category: employer
+  question: will DHS warn us before they come for a STEM OPT site visit
+  should_refuse: false
+  expected_facts: ["48 hours of notice"]
+  gold:
+    - doc_id: dhs-stem-opt-faq
+      section: Employers
+      quote: In most cases, DHS will provide 48 hours of notice to employers before a site visit.
+
+- id: employer-pay-commensurate
+  category: employer
+  question: can we pay our STEM OPT engineer less than the other engineers on the team
+  should_refuse: false
+  expected_facts: ["commensurate", "similarly situated U.S. workers"]
+  gold:
+    - doc_id: dhs-form-i-983-overview
+      section: Employer Certifications
+      quote: The duties, hours and compensation associated with the student’s STEM OPT position are commensurate with those provided to the employer’s similarly situated U.S. workers in the area of employment.
+
+- id: employer-signs-evaluation
+  category: employer
+  question: im the manager, do i have to sign my STEM OPT employee's self evaluation
+  should_refuse: false
+  expected_facts: ["review and sign the self-evaluation"]
+  gold:
+    - doc_id: dhs-form-i-983-overview
+      section: Evaluation of Student Progress
+      quote: The employer must review and sign the self-evaluation to verify its accuracy.

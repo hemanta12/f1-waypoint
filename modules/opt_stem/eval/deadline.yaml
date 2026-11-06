@@ -1,0 +1,209 @@
+- id: opt-unemployment-limit
+  category: deadline
+  question: how many days can i be unemployed on regular OPT before i lose status
+  should_refuse: false
+  expected_facts: ["90 days"]
+  gold:
+    - doc_id: dhs-unemployment-counter
+      section: General Information
+      quote: "Post-completion OPT: 90 days."
+
+- id: stem-unemployment-not-fresh
+  category: deadline
+  question: on STEM OPT do i get a fresh 150 unemployment days or do my OPT days count too
+  should_refuse: false
+  expected_facts: ["150 days", "includes any days accrued while on post-completion OPT"]
+  gold:
+    - doc_id: dhs-unemployment-counter
+      section: General Information
+      quote: "STEM OPT: 150 days, which includes any days accrued while on post-completion OPT."
+
+- id: stem-extra-unemployment
+  category: deadline
+  question: how many extra unemployment days does the STEM extension give me
+  should_refuse: false
+  expected_facts: ["additional 60 days"]
+  gold:
+    - doc_id: dhs-stem-opt-extension-overview
+      section: Unemployment
+      quote: DHS allows STEM OPT students an additional 60 days of unemployment during the 24-month STEM OPT extension period.
+
+- id: unemployment-clock-start
+  category: deadline
+  question: when does my unemployment clock start, graduation day or my EAD start date?
+  should_refuse: false
+  expected_facts: ["Actual OPT Start Date"]
+  gold:
+    - doc_id: dhs-unemployment-counter
+      section: General Information
+      quote: Look back to the Actual OPT Start Date for that period of OPT.
+
+- id: opt-earliest-filing
+  category: deadline
+  question: how early before graduation can i send in my OPT application
+  should_refuse: false
+  expected_facts: ["90 days before you complete your degree"]
+  gold:
+    - doc_id: uscis-opt
+      section: When to apply
+      quote: May apply up to 90 days before you complete your degree, but no later than 60 days after you complete your degree.
+
+- id: opt-latest-filing
+  category: deadline
+  question: whats the latest i can file for post completion OPT after my program ends
+  should_refuse: false
+  expected_facts: ["no later than 60 days after you complete your degree"]
+  gold:
+    - doc_id: uscis-opt
+      section: When to apply
+      quote: May apply up to 90 days before you complete your degree, but no later than 60 days after you complete your degree.
+
+- id: opt-30-days-after-recommendation
+  category: deadline
+  question: my DSO already put my OPT recommendation in SEVIS, how long do i have to file the I-765
+  should_refuse: false
+  expected_facts: ["within 30 days"]
+  gold:
+    - doc_id: uscis-opt
+      section: When to apply
+      quote: Must apply within 30 days after your DSO enters the recommendation for OPT into your SEVIS record
+
+- id: stem-earliest-filing
+  category: deadline
+  question: how early can i apply for the STEM OPT extension
+  should_refuse: false
+  expected_facts: ["up to 90 days before your current OPT employment authorization expires"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Eligibility for the STEM OPT Extension
+      quote: Submit the Form I-765, Application for Employment Authorization, up to 90 days before your current OPT employment authorization expires
+
+- id: stem-60-days-after-recommendation
+  category: deadline
+  question: dso recommended my stem opt in sevis, whats my deadline to mail the application
+  should_refuse: false
+  expected_facts: ["within 60 days"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Eligibility for the STEM OPT Extension
+      quote: within 60 days of the date your designated school official (DSO) enters the recommendation for OPT into your Student and Exchange Visitor Information System (SEVIS) record
+
+- id: stem-180-day-auto-extension
+  category: deadline
+  question: my OPT card expires before my STEM extension gets approved, how long can i keep working
+  should_refuse: false
+  expected_facts: ["180 days", "on time"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Applying for a STEM OPT Extension
+      quote: If you file your STEM OPT extension application on time and your OPT period expires while your extension application is pending, we will automatically extend your employment authorization for 180 days.
+
+- id: stem-i20-age
+  category: deadline
+  question: how recent does my I-20 have to be when i apply for STEM OPT
+  should_refuse: false
+  expected_facts: ["within the last 60 days"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Applying for a STEM OPT Extension
+      quote: Form I-20, Certificate of Eligibility for Nonimmigrant Student Status, endorsed by your DSO within the last 60 days
+
+- id: grace-period-after-opt
+  category: deadline
+  question: how long can i stay in the US after my OPT ends
+  should_refuse: false
+  expected_facts: ["60 days beyond the EAD expiration date"]
+  gold:
+    - doc_id: uscis-policy-manual-practical-training
+      section: Post-completion OPT
+      quote: An F-1 student who has completed an authorized period of post-completion OPT may remain in F-1 status for 60 days beyond the EAD expiration date.
+
+- id: no-stem-filing-in-grace-period
+  category: deadline
+  question: my OPT already ended, can i still apply for STEM OPT during my 60 day grace period
+  should_refuse: false
+  expected_facts: ["may not apply", "60-day grace period"]
+  gold:
+    - doc_id: dhs-stem-opt-extension-overview
+      section: STEM OPT Extension Overview
+      quote: Students may not apply for STEM OPT extensions during the 60-day grace period following an initial period of regular post-completion OPT.
+
+- id: opt-length
+  category: deadline
+  question: how long does OPT last
+  should_refuse: false
+  expected_facts: ["12 months"]
+  gold:
+    - doc_id: uscis-opt
+      section: Optional Practical Training (OPT) for F-1 Students
+      quote: Eligible students can apply to receive up to 12 months of OPT employment authorization
+
+- id: stem-extension-length
+  category: deadline
+  question: how many months is the STEM OPT extension
+  should_refuse: false
+  expected_facts: ["24-month"]
+  gold:
+    - doc_id: uscis-stem-opt
+      section: Optional Practical Training Extension for STEM Students (STEM OPT)
+      quote: may apply for a 24-month extension of their post-completion optional practical training (OPT)
+
+- id: cap-gap-end-date
+  category: deadline
+  question: my H-1B got filed but my OPT ends before october, until when does cap gap cover me
+  should_refuse: false
+  expected_facts: ["April 1"]
+  gold:
+    - doc_id: dhs-stem-opt-extension-overview
+      section: Cap-Gap Extension
+      quote: The Cap-Gap extension allows such students to automatically extend the duration of their F‑1 status and any current employment authorization until the April 1 the following year.
+
+- id: pre-completion-hours
+  category: deadline
+  question: if i do OPT before i graduate how many hours a week can i work while classes are going
+  should_refuse: false
+  expected_facts: ["20 hours or less per week"]
+  gold:
+    - doc_id: uscis-opt
+      section: Types of OPT
+      quote: If you are authorized to participate in pre-completion OPT, you may work (20 hours or less per week) while school is in session.
+
+- id: part-time-job-stops-clock
+  category: deadline
+  question: does a 15 hour a week job count as employment on OPT or am i still unemployed
+  should_refuse: false
+  expected_facts: ["at least 20 hours per week"]
+  gold:
+    - doc_id: uscis-opt
+      section: Types of OPT
+      quote: If you are authorized for post-completion OPT, you must work part time (at least 20 hours per week) or full time.
+
+- id: full-time-cpt-blocks-opt
+  category: deadline
+  question: i did a full year of full time CPT, can i still get OPT after graduation
+  should_refuse: false
+  expected_facts: ["12 months or more of full-time CPT", "ineligible for OPT"]
+  gold:
+    - doc_id: ice-practical-training
+      section: CPT
+      quote: If you have 12 months or more of full-time CPT, you are ineligible for OPT, but part-time CPT is fine and will not stop you from doing OPT.
+
+- id: work-before-ead
+  category: deadline
+  question: can i start my job as soon as my OPT application is filed or do i wait for the card
+  should_refuse: false
+  expected_facts: ["approve your Form I-765", "receive your Employment Authorization Document"]
+  gold:
+    - doc_id: uscis-opt
+      section: When to apply
+      quote: You may not begin your pre- or post-completion OPT until after we approve your Form I-765 and you receive your Employment Authorization Document (EAD).
+
+- id: volunteer-stops-clock
+  category: deadline
+  question: does a volunteer or unpaid internship stop my OPT unemployment clock
+  should_refuse: false
+  expected_facts: ["volunteer or unpaid intern", "related to the program of study", "at least 20 hours per week"]
+  gold:
+    - doc_id: uscis-policy-manual-practical-training
+      section: Post-completion OPT
+      quote: A student may work as a volunteer or unpaid intern, as long as this practice does not violate any labor laws, and the employment is related to the program of study. The student must work at least 20 hours per week.
