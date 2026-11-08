@@ -18,3 +18,6 @@ docs/DECISIONS.md
 __pycache__/
 .pytest_cache/
 .ruff_cache/
+runs/
+modules/*/index.sqlite
+modules/*/index.tmp
