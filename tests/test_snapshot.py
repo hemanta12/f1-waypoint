@@ -36,7 +36,7 @@ def test_pdf_and_xml_extraction(tmp_path):
     xml = tmp_path / "b.xml"
     xml.write_text("<DIV><P>8 CFR</P><P>214.2</P></DIV>")
     assert "Form I-983" in extract_text(tmp_path / "a.pdf")
-    assert extract_text(xml) == "8 CFR 214.2"
+    assert extract_text(xml) == "8 CFR\n214.2"
 
 
 def test_missing_and_empty_files_are_reported_not_registered(tmp_path):
@@ -116,3 +116,40 @@ def test_trailing_colon_in_header_is_not_doubled(tmp_path):
     f = tmp_path / "t.html"
     f.write_text("<table><tr><th>When:</th></tr><tr><td>6 months</td></tr></table>")
     assert "When: 6 months" in extract_text(f).splitlines()
+
+
+def test_sections_use_main_only_and_three_heading_forms(tmp_path):
+    from core.snapshot import extract_sections
+
+    f = tmp_path / "a.html"
+    f.write_text(
+        "<nav><h2>Menu</h2></nav><main><p>Intro</p>"
+        "<h2>Types of OPT</h2><p>Pre and post.</p>"
+        "<dl><dt>Unemployment</dt><dd>90 days.</dd></dl>"
+        "<p><strong>Student Reporting</strong></p><p>Report in 10 days.</p>"
+        "<p><strong>Note:</strong> bold inside a sentence is not a heading.</p>"
+        "</main><footer><h4>About</h4></footer>"
+    )
+    sections = extract_sections(f)
+    assert [h for h, _ in sections] == [None, "Types of OPT", "Unemployment", "Student Reporting"]
+    assert sections[2][1] == "Unemployment\n90 days."
+    assert "not a heading" in sections[3][1]
+    assert "Menu" not in extract_text(f) and "About" not in extract_text(f)
+
+
+def test_page_without_main_keeps_whole_body(tmp_path):
+    f = tmp_path / "a.html"
+    f.write_text("<h1>Title</h1><p>Body</p>")
+    assert extract_text(f) == "Title\nBody"
+
+
+def test_reextract_moves_hash_but_not_dates(tmp_path):
+    corpus = _corpus(tmp_path)
+    raw = corpus / "raw" / "doc.html"
+    raw.write_text("<p>Report in 10 days</p>")
+    first, _ = build_registry([_source("doc")], "m", corpus, D1)
+    raw.write_text("<p>Report in 15 days</p>")
+    second, _ = build_registry([_source("doc")], "m", corpus, D2, reextract=True)
+    assert second[0].content_hash != first[0].content_hash
+    assert second[0].retrieved_at == first[0].retrieved_at
+    assert second[0].verified_on == first[0].verified_on

@@ -10,7 +10,11 @@ import pymupdf
 from core.registry import Document, Source, apply_refetch, hash_text
 
 _SKIP_TAGS = {"script", "style", "noscript", "template"}
-_BLOCK_TAGS = {"p", "div", "br", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "section", "table"}
+_HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6", "dt"}
+_BLOCK_TAGS = _HEADING_TAGS | {"p", "div", "br", "li", "tr", "dd", "section", "table"}
+_MAIN = re.compile(r"<main[\s>].*</main>", re.IGNORECASE | re.DOTALL)
+
+Section = tuple[str | None, str]
 
 
 class _TextExtractor(HTMLParser):
@@ -18,11 +22,17 @@ class _TextExtractor(HTMLParser):
 
     A row becomes "Header A: cell A | Header B: cell B", so a chunk that holds
     only that row still says what each number means.
+
+    Section starts are recorded in `starts` as (index into parts, heading text).
+    A heading is an <h1>-<h6>, a <dt>, or a <p> whose whole text is one <strong>.
     """
 
     def __init__(self) -> None:
         super().__init__()
         self.parts: list[str] = []
+        self.starts: list[tuple[int, str]] = []
+        self._open: list[tuple[str, int]] = []
+        self._strong_text: str | None = None
         self._skip = 0
         self._table_depth = 0
         self._headers: list[str] = []
@@ -53,10 +63,38 @@ class _TextExtractor(HTMLParser):
                 self._cell.append(" ")
             else:
                 self.parts.append("\n")
+                if not self._table_depth and (tag in _HEADING_TAGS or tag == "p"):
+                    self._open.append((tag, len(self.parts)))
+                    if tag == "p":
+                        self._strong_text = None
+        elif tag == "strong" and self._open and self._open[-1][0] == "p":
+            self._open.append(("strong", len(self.parts)))
+
+    def _close_heading(self, tag: str) -> None:
+        while self._open and self._open[-1][0] != tag:
+            self._open.pop()
+        if not self._open:
+            return
+        _, start = self._open.pop()
+        text = re.sub(r"\s+", " ", "".join(self.parts[start:])).strip()
+        if tag == "strong":
+            self._strong_text = text
+            return
+        if tag == "p" and (not text or text != self._strong_text):
+            return
+        if text:
+            self.starts.append((start, text))
 
     def handle_endtag(self, tag):
         if tag in _SKIP_TAGS and self._skip:
             self._skip -= 1
+        elif (
+            not self._skip
+            and not self._table_depth
+            and (tag in _HEADING_TAGS or tag in {"p", "strong"})
+        ):
+            if any(t == tag for t, _ in self._open):
+                self._close_heading(tag)
         elif tag == "table" and self._table_depth:
             self._table_depth -= 1
             if not self._table_depth:
@@ -111,16 +149,62 @@ class _TextExtractor(HTMLParser):
         (self._cell if self._cell is not None else self.parts).append(data)
 
 
-def extract_text(path: Path) -> str:
+_XML_BLOCKS = {"HEAD", "HED", "P", "FP", "CAPTION", "TR", "SECAUTH", "CITA", "EDNOTE", "EFFDNOT"}
+
+
+def _xml_text(el: ET.Element) -> str:
+    # Pieces are joined with spaces as itertext() was, so content_hash is unchanged.
+    out = ["\n"] if el.tag in _XML_BLOCKS else []
+    out.append(el.text or "")
+    for child in el:
+        out.append(_xml_text(child))
+        out.append(child.tail or "")
+    return " ".join(out)
+
+
+def _clean(text: str) -> str:
+    return re.sub(r"\n\s*\n+", "\n\n", text).strip()
+
+
+def extract_sections(path: Path) -> list[Section]:
+    """(heading, text) pairs in page order; heading is None before the first one.
+    HTML keeps only <main> when the page has one, so menus and footers drop out.
+    PDF and XML come back as one section with no heading.
+
+    In every format a line break means a block boundary (paragraph, list item,
+    table row), never a break inside a sentence; the chunker relies on that."""
     suffix = path.suffix.lower()
     if suffix == ".pdf":
         with pymupdf.open(path) as pdf:
-            return "\n\n".join(page.get_text() for page in pdf)
+            text = "\n\n".join(page.get_text() for page in pdf)
+        # PDF lines are layout lines; only blank lines mark real paragraphs.
+        paras = [" ".join(p.split()) for p in re.split(r"\n\s*\n", text)]
+        text = "\n".join(p for p in paras if p)
+        return [(None, text)] if text else []
     if suffix == ".xml":
-        return " ".join(ET.fromstring(path.read_bytes()).itertext())
+        lines = _xml_text(ET.fromstring(path.read_bytes())).split("\n")
+        text = "\n".join(" ".join(ln.split()) for ln in lines if ln.strip())
+        return [(None, text)] if text else []
+    html = path.read_text(encoding="utf-8", errors="replace")
+    main = _MAIN.search(html)
     parser = _TextExtractor()
-    parser.feed(path.read_text(encoding="utf-8", errors="replace"))
-    return re.sub(r"\n\s*\n+", "\n\n", "".join(parser.parts)).strip()
+    parser.feed(main.group(0) if main else html)
+    parser.close()
+    bounds = [(0, None), *parser.starts, (len(parser.parts), None)]
+    sections = []
+    for (start, heading), (end, _) in zip(bounds, bounds[1:], strict=False):
+        text = _clean("".join(parser.parts[start:end]))
+        if text:
+            sections.append((heading, text))
+    return sections
+
+
+def extract_text(path: Path) -> str:
+    # Built from the sections so the snapshot and the chunker can never disagree.
+    sections = extract_sections(path)
+    if path.suffix.lower() in {".pdf", ".xml"}:
+        return sections[0][1] if sections else ""
+    return "\n\n".join(text for _, text in sections)
 
 
 def find_raw(raw_dir: Path, doc_id: str) -> Path | None:
@@ -178,12 +262,16 @@ def build_registry(
     module_id: str,
     corpus_dir: Path,
     today: date,
+    reextract: bool = False,
 ) -> tuple[list[Document], list[str]]:
     """Return (registry entries, doc_ids with no usable raw file).
 
     A new document is dated by the raw file's modified time, i.e. when it was
     saved. An existing one goes through apply_refetch so unchanged text keeps
     its retrieved_at.
+
+    reextract=True is for an extractor change, not a re-fetch: the same raw files
+    produce new text, so only content_hash moves and both dates stay.
     """
     raw_dir, text_dir = corpus_dir / "raw", corpus_dir / "text"
     registry_path = corpus_dir / "registry.json"
@@ -203,7 +291,9 @@ def build_registry(
             missing.append(s.doc_id)
             continue
         (text_dir / f"{s.doc_id}.txt").write_text(text, encoding="utf-8")
-        if s.doc_id in known:
+        if s.doc_id in known and reextract:
+            docs.append(known[s.doc_id].model_copy(update={"content_hash": hash_text(text)}))
+        elif s.doc_id in known:
             docs.append(apply_refetch(known[s.doc_id], text, today))
         else:
             saved = datetime.fromtimestamp(raw.stat().st_mtime).date()
@@ -234,7 +324,11 @@ if __name__ == "__main__":
     sources = load_sources(root / "sources.yaml")
     for name in sort_inbox(sources, root / "corpus" / "raw"):
         print(f"  unmatched in inbox (rename to <doc_id>.html or .pdf): {name}")
-    docs, missing = build_registry(sources, module.id, root / "corpus", date.today())
+    import sys
+
+    docs, missing = build_registry(
+        sources, module.id, root / "corpus", date.today(), reextract="--reextract" in sys.argv
+    )
     print(f"registered {len(docs)}; missing {len(missing)}")
     for s in sources:
         if s.doc_id in missing:
