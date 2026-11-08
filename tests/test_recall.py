@@ -48,3 +48,12 @@ def test_gold_found_twice_counts_once():
 def test_no_gold_raises():
     with pytest.raises(ValueError):
         recall_at_k([], [HIT])
+
+
+def test_alternate_passage_counts_as_a_hit():
+    from core.evalset import Passage
+
+    alt = Passage(doc_id="dhs-stem-opt-faq", section="S", quote="within five business days")
+    gold = GOLD.model_copy(update={"alternates": [alt]})
+    assert is_hit(gold, ("dhs-stem-opt-faq", "notify the DSO within five business days."))
+    assert not is_hit(gold, ("uscis-opt", "notify the DSO within five business days."))

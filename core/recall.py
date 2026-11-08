@@ -1,13 +1,16 @@
 from core.evalset import GoldPassage
 from core.registry import normalize_text
 
-# A retrieved chunk as (doc_id, chunk_text). Phase 3 replaces this with a real Chunk type.
+# A retrieved chunk or passage as (doc_id, text).
 Retrieved = tuple[str, str]
 
 
 def is_hit(gold: GoldPassage, chunk: Retrieved) -> bool:
     doc_id, text = chunk
-    return doc_id == gold.doc_id and normalize_text(gold.quote) in normalize_text(text)
+    return any(
+        doc_id == p.doc_id and normalize_text(p.quote) in normalize_text(text)
+        for p in (gold, *gold.alternates)
+    )
 
 
 def recall_at_k(gold: list[GoldPassage], retrieved: list[Retrieved], k: int = 5) -> float:

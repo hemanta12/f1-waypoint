@@ -17,6 +17,10 @@
     - doc_id: dhs-student-stem-opt-reporting
       section: Employer Noncompliance
       quote: the student should leave that practical training opportunity and report their unemployment to the DSO. A period of student unemployment, caused by an employer’s failure to comply with program requirements, on its own will not affect the STEM OPT student’s status so long as the student reports changes in employment status and adheres to the overall unemployment limits.
+      alternates:
+        - doc_id: dhs-dso-stem-opt-reporting
+          section: "Employer Noncompliance"
+          quote: "the student should leave that practical training opportunity and report their unemployment to the DSO. The student should be encouraged to report the employer’s noncompliance to SEVP at ICE by following the instructions found on ICE.gov. The student should also be assured that a period of unemployment caused by an employer’s noncompliance with the terms and conditions of the STEM OPT extension program requirements on its own will not affect the STEM OPT student’s status, so long as the student reports changes in employment status and adheres to the overall unemployment limits."
 
 - id: near-miss-fica-withheld
   category: near_miss

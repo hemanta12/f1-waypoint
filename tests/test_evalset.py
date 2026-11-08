@@ -124,3 +124,10 @@ def test_real_eval_set_is_valid():
         pytest.skip("no eval cases written yet")
     problems, _ = validate_eval_set(load_eval_set(MODULE / "eval"), CORPUS)
     assert problems == []
+
+
+def test_alternate_quotes_are_checked_against_the_corpus_too():
+    alt = {"doc_id": "uscis-opt", "section": "S", "quote": "no such sentence anywhere"}
+    case = EvalCase.model_validate(_answerable(gold=[GOLD | {"alternates": [alt]}]))
+    problems, _ = validate_eval_set([case], CORPUS)
+    assert problems == ["report-address-change: quote not found in uscis-opt"]

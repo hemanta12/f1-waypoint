@@ -47,6 +47,10 @@
     - doc_id: uscis-opt
       section: When to apply
       quote: May apply up to 90 days before you complete your degree, but no later than 60 days after you complete your degree.
+      alternates:
+        - doc_id: uscis-policy-manual-practical-training
+          section: "5. OPT Filing"
+          quote: "A student may apply for post-completion OPT no earlier than 90 days prior to the student’s program end date and no later than 60 days after the student’s program end-date."
 
 - id: opt-latest-filing
   category: deadline
@@ -57,6 +61,10 @@
     - doc_id: uscis-opt
       section: When to apply
       quote: May apply up to 90 days before you complete your degree, but no later than 60 days after you complete your degree.
+      alternates:
+        - doc_id: uscis-policy-manual-practical-training
+          section: "5. OPT Filing"
+          quote: "A student may apply for post-completion OPT no earlier than 90 days prior to the student’s program end date and no later than 60 days after the student’s program end-date."
 
 - id: opt-30-days-after-recommendation
   category: deadline
@@ -67,6 +75,10 @@
     - doc_id: uscis-opt
       section: When to apply
       quote: Must apply within 30 days after your DSO enters the recommendation for OPT into your SEVIS record
+      alternates:
+        - doc_id: uscis-i-765-instructions
+          section: "Page 5"
+          quote: "You must file your Form I-765 within 30 days this DSO recommendation."
 
 - id: stem-earliest-filing
   category: deadline
@@ -87,6 +99,13 @@
     - doc_id: uscis-stem-opt
       section: Eligibility for the STEM OPT Extension
       quote: within 60 days of the date your designated school official (DSO) enters the recommendation for OPT into your Student and Exchange Visitor Information System (SEVIS) record
+      alternates:
+        - doc_id: uscis-opt
+          section: "When to apply"
+          quote: "Must apply within 60 days after your DSO enters the recommendation for OPT into your SEVIS record"
+        - doc_id: uscis-i-765-instructions
+          section: "Page 5"
+          quote: "You must file your Form I-765 within 60 days of this DSO recommendation."
 
 - id: stem-180-day-auto-extension
   category: deadline
@@ -137,6 +156,10 @@
     - doc_id: uscis-opt
       section: Optional Practical Training (OPT) for F-1 Students
       quote: Eligible students can apply to receive up to 12 months of OPT employment authorization
+      alternates:
+        - doc_id: ice-practical-training
+          section: "OPT"
+          quote: "You can apply for 12 months of OPT at each education level"
 
 - id: stem-extension-length
   category: deadline
@@ -147,6 +170,10 @@
     - doc_id: uscis-stem-opt
       section: Optional Practical Training Extension for STEM Students (STEM OPT)
       quote: may apply for a 24-month extension of their post-completion optional practical training (OPT)
+      alternates:
+        - doc_id: dhs-stem-opt-extension-overview
+          section: "STEM OPT Extension Overview"
+          quote: "The STEM OPT extension is a 24-month period of temporary training"
 
 - id: cap-gap-end-date
   category: deadline
@@ -197,6 +224,10 @@
     - doc_id: uscis-opt
       section: When to apply
       quote: You may not begin your pre- or post-completion OPT until after we approve your Form I-765 and you receive your Employment Authorization Document (EAD).
+      alternates:
+        - doc_id: ecfr-8-cfr-214-2
+          section: "8 CFR 214.2(f)"
+          quote: "A student may not begin OPT employment prior to the approved start date on his or her Employment Authorization Document"
 
 - id: volunteer-stops-clock
   category: deadline

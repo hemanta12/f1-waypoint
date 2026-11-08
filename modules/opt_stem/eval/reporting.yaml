@@ -17,6 +17,10 @@
     - doc_id: ice-practical-training
       section: 24-Month STEM OPT Extension
       quote: You must report changes in name, address, employer and loss of employment to your DSO within 10 days of any change.
+      alternates:
+        - doc_id: ecfr-8-cfr-214-2
+          section: "8 CFR 214.2(f)"
+          quote: "Within 10 days of the change, the student must report to the student's DSO a change of legal name, residential or mailing address, employer name, employer address, and/or loss of employment."
 
 - id: stem-validation-no-change
   category: reporting
@@ -57,6 +61,10 @@
     - doc_id: dhs-student-stem-opt-reporting
       section: Validating SEVIS Information
       quote: STEM OPT students must report a change in this information, including any loss of employment, within 10 days of the change.
+      alternates:
+        - doc_id: dhs-student-stem-opt-reporting
+          section: "Unemployment"
+          quote: "STEM OPT students must report the termination of their practical training experience within 10 days of the event."
 
 - id: stem-email-change
   category: reporting
@@ -137,6 +145,10 @@
     - doc_id: uscis-stem-opt
       section: STEM OPT Employer Requirements and Responsibilities
       quote: Report the STEM OPT student’s termination of employment or departure to the DSO within 5 business days.
+      alternates:
+        - doc_id: dhs-stem-opt-faq
+          section: "What if my STEM OPT student stops showing up for their training or is terminated?"
+          quote: "If an employer terminates a student, you are required to notify the DSO within five business days."
 
 - id: stem-employer-noncompliance
   category: reporting

@@ -7,6 +7,10 @@
     - doc_id: dhs-form-i-983-overview
       section: Evaluation of Student Progress
       quote: The student must submit the first assessment within 12 months of the STEM OPT start date
+      alternates:
+        - doc_id: dhs-students-and-form-i-983
+          section: "Evaluation of Student Progress"
+          quote: "The student must complete the first “Evaluation of Student Progress” portion of the Form I-983, “Training Plan for STEM OPT Students” within 12 months of the listed STEM OPT start date."
 
 - id: i983-final-evaluation-leaving-job
   category: i983

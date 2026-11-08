@@ -27,11 +27,17 @@ class _Strict(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
-class GoldPassage(_Strict):
+class Passage(_Strict):
     doc_id: str
     section: str = Field(min_length=1)
     # Verbatim from the corpus text; whitespace differences are ignored.
     quote: str = Field(min_length=1)
+
+
+class GoldPassage(Passage):
+    # Other official passages that state the same rule; retrieving any one counts.
+    # expected_facts are checked against the main quote only.
+    alternates: list[Passage] = []
 
 
 class EvalCase(_Strict):
@@ -87,7 +93,7 @@ def validate_eval_set(cases: list[EvalCase], corpus_dir: Path) -> tuple[list[str
     }
     texts: dict[str, str] = {}
     for c in cases:
-        for g in c.gold:
+        for g in [p for gold in c.gold for p in (gold, *gold.alternates)]:
             doc = registry.get(g.doc_id)
             if doc is None:
                 problems.append(f"{c.id}: gold doc_id {g.doc_id} not in registry")

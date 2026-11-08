@@ -71,6 +71,10 @@
     - doc_id: dhs-unemployment-counter
       section: General Information
       quote: "Post-completion OPT: 90 days."
+      alternates:
+        - doc_id: uscis-stem-opt
+          section: "Unemployment during the OPT Period"
+          quote: "You may be unemployed for…: Up to 90 days"
 
 - id: refuse-case-late-report
   category: refusal
@@ -85,6 +89,10 @@
     - doc_id: ice-practical-training
       section: 24-Month STEM OPT Extension
       quote: You must report changes in name, address, employer and loss of employment to your DSO within 10 days of any change.
+      alternates:
+        - doc_id: ecfr-8-cfr-214-2
+          section: "8 CFR 214.2(f)"
+          quote: "Within 10 days of the change, the student must report to the student's DSO a change of legal name, residential or mailing address, employer name, employer address, and/or loss of employment."
 
 - id: refuse-case-filing-date
   category: refusal
@@ -99,6 +107,10 @@
     - doc_id: uscis-opt
       section: When to apply
       quote: May apply up to 90 days before you complete your degree, but no later than 60 days after you complete your degree.
+      alternates:
+        - doc_id: uscis-policy-manual-practical-training
+          section: "5. OPT Filing"
+          quote: "A student may apply for post-completion OPT no earlier than 90 days prior to the student’s program end date and no later than 60 days after the student’s program end-date."
 
 - id: refuse-legal-get-around-limit
   category: refusal

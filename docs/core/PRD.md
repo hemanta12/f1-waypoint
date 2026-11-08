@@ -70,11 +70,11 @@ Order of checks: input screen, then retrieval, then the score threshold, then a 
 
 ## Success metrics
 
-Targets are starting points and get reset after the first baseline run.
+Each target is reset after its first measured run. Recall@5 was reset after the retrieval baseline (0.89, vector search only, November 2026); the rest are still starting points.
 
 | Metric | What it measures | Target |
 |---|---|---|
-| Recall@5 | The right source passage is in the top 5 results | 0.85 or higher |
+| Recall@5 | The right source passage, or another official passage stating the same rule, is in the top 5 results | 0.95 or higher |
 | Deadline accuracy | The stated number and reporting channel match the gold answer | 95 percent or higher |
 | Citation correctness | Cited passages exist, and every number and form ID appears in them | 100 percent |
 | Refusal accuracy | Refusal cases are refused, answerable cases are answered | 100 percent on refusal cases, 90 percent or higher on answerable |
@@ -82,7 +82,7 @@ Targets are starting points and get reset after the first baseline run.
 | Fallback rate | Answerable questions where the citation check fails and only passages are shown | Tracked, reviewed if above about 5 percent |
 | Freshness | Time to detect a changed official page | Within one scheduled run |
 
-The eval set is about 65 hand-written questions with gold passages (not gold answers): deadline and clock, reporting, I-983, employer, near-miss answerable questions that sound risky, and refusal cases covering every refusal reason with paraphrases. A hand-graded sample checks that cited passages actually support each claim.
+The eval set is 67 questions with gold passages (not gold answers), drafted with AI and reviewed by hand: deadline and clock, reporting, I-983, employer, near-miss answerable questions that sound risky, and refusal cases covering every refusal reason with paraphrases. A hand-graded sample checks that cited passages actually support each claim.
 
 ## Sources and privacy
 
@@ -97,7 +97,7 @@ The eval set is about 65 hand-written questions with gold passages (not gold ans
 |---|---|
 | Legal advice drift | Refusal gate, disclaimer on every answer, refusal cases in the eval |
 | Stale rules | Hash-based freshness job, eval gate on updates, visible verified-on date |
-| Inflated scores | Hand-written eval, gold passages rather than gold answers |
+| Inflated scores | Every eval case reviewed by hand, gold passages rather than gold answers |
 | Table extraction errors | Manual spot-check, table-aware chunking |
 | Cost abuse on a public demo | Layered rate limits and spend caps |
 | Scope creep | Non-goals list, module boundary, home screen states exactly what is covered |

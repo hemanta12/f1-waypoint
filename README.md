@@ -4,7 +4,7 @@ Cited answers to F-1 OPT and STEM OPT questions, drawn only from official source
 
 F-1 Waypoint is an independent project. It is not affiliated with any government agency, and it is not legal advice. For anything specific to your case, talk to your school's DSO or an immigration attorney.
 
-**Status:** design phase. The specs are written and the implementation has not started. No eval results exist yet. They will be published here after the first baseline run.
+**Status:** in development. The corpus snapshot, eval set, chunking and vector search are built. Hybrid retrieval, the refusal gate and answer generation are next. See [Progress](#progress).
 
 ## Why
 
@@ -28,11 +28,28 @@ A retrieval-augmented generation system built without an orchestration framework
 - A refusal gate runs before generation: input screen, retrieval score threshold, then a question classifier.
 - A citation check runs after generation. If it fails, the user sees the source passages instead of an unverified answer.
 - A scheduled job hashes the official pages, detects changes, re-runs the eval and syncs deletions.
-- A hand-written eval set of about 65 questions with gold passages (not gold answers), scored on Recall@5, deadline accuracy, citation correctness, refusal accuracy, refusal reason accuracy and fallback rate.
+- An eval set of 67 questions with gold passages (not gold answers), drafted with AI and reviewed by hand, scored on Recall@5, deadline accuracy, citation correctness, refusal accuracy, refusal reason accuracy and fallback rate.
+
+## Progress
+
+**Retrieval baseline (Phase 3):** Recall@5 is **0.89** on the 55 eval questions that have gold passages. That is vector search only (BGE-small, cosine similarity over about 1,300 chunks), with structure-aware chunks of up to 150 words, copies across pages removed and split sections joined. A gold passage may list other official passages that state the same rule; finding any of them counts.
+
+Chunking comparison, same embedding model and retriever for every row, before copy removal:
+
+| Chunking | Chunks | Recall@5 |
+|---|---|---|
+| Structure-aware, 150 words | 1,331 | 0.87 |
+| Structure-aware, 200 words | 1,005 | 0.76 |
+| Structure-aware, 300 words | 670 | 0.73 |
+| Fixed-size, 150 words | 1,323 | 0.73 |
+| Fixed-size, 300 words | 664 | 0.71 |
+| Fixed-size, 200 words | 992 | 0.60 |
+
+Structure-aware chunks split at section headings and never inside a sentence. Fixed-size chunks cut every N words with a 20 percent overlap. The other-passage alternatives were found by reviewing the structure-aware 150 run's misses, so the gap to the other rows may be somewhat overstated.
 
 ## Stack
 
-Python 3.12 with FastAPI, SQLite with sqlite-vec, React with Vite and TypeScript, hosted on Cloudflare Pages and Railway. Details and reasoning are in [Tech Stack](docs/core/Tech%20Stack.md).
+Python 3.12 with FastAPI, SQLite for chunks and vectors, BGE-small embeddings through fastembed (ONNX Runtime, no PyTorch), React with Vite and TypeScript, hosted on Cloudflare Pages and Railway. Details and reasoning are in [Tech Stack](docs/core/Tech%20Stack.md).
 
 ## Docs
 
