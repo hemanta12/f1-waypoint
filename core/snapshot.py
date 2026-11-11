@@ -9,10 +9,19 @@ import pymupdf
 
 from core.registry import Document, Source, apply_refetch, hash_text
 
-_SKIP_TAGS = {"script", "style", "noscript", "template"}
+_SKIP_TAGS = {"script", "style", "noscript", "template", "aside"}
 _HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6", "dt"}
 _BLOCK_TAGS = _HEADING_TAGS | {"p", "div", "br", "li", "tr", "dd", "section", "table"}
 _MAIN = re.compile(r"<main[\s>].*</main>", re.IGNORECASE | re.DOTALL)
+# Page furniture these agency sites put inside <main> (DHS side menus sit in <aside>,
+# skipped above): DHS breadcrumb and "Related Tags"; the USCIS site-wide photo banner
+# and feedback form. ICE's "alert" box is NOT listed: it carries rule notices.
+_SKIP_CLASSES = {
+    "region-breadcrumb",
+    "field--name-field-topics",
+    "alert-message",
+    "admin-feedback-form",
+}
 
 Section = tuple[str | None, str]
 
@@ -34,6 +43,9 @@ class _TextExtractor(HTMLParser):
         self._open: list[tuple[str, int]] = []
         self._strong_text: str | None = None
         self._skip = 0
+        # [tag, depth] of a skipped furniture element; depth counts nested same tags
+        # so the skip ends at its own closing tag, not an inner one.
+        self._furniture: list | None = None
         self._table_depth = 0
         self._headers: list[str] = []
         self._row: list[tuple[str, int]] = []
@@ -43,6 +55,13 @@ class _TextExtractor(HTMLParser):
         self._carry: dict[int, list] = {}
 
     def handle_starttag(self, tag, attrs):
+        if self._furniture:
+            if tag == self._furniture[0]:
+                self._furniture[1] += 1
+            return
+        if _SKIP_CLASSES.intersection((dict(attrs).get("class") or "").split()):
+            self._furniture = [tag, 1]
+            return
         if tag in _SKIP_TAGS:
             self._skip += 1
         elif tag == "table":
@@ -86,6 +105,12 @@ class _TextExtractor(HTMLParser):
             self.starts.append((start, text))
 
     def handle_endtag(self, tag):
+        if self._furniture:
+            if tag == self._furniture[0]:
+                self._furniture[1] -= 1
+                if not self._furniture[1]:
+                    self._furniture = None
+            return
         if tag in _SKIP_TAGS and self._skip:
             self._skip -= 1
         elif (
@@ -144,7 +169,7 @@ class _TextExtractor(HTMLParser):
         self.parts.append(" | ".join(cells) + "\n")
 
     def handle_data(self, data):
-        if self._skip:
+        if self._skip or self._furniture:
             return
         (self._cell if self._cell is not None else self.parts).append(data)
 

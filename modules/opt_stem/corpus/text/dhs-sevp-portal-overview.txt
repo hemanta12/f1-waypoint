@@ -1,13 +1,3 @@
-Breadcrumb
-
-                Home
-
-                SEVP Portal Help
-
-                SEVP Portal Overview
-
-                SEVP Portal Overview
-
 SEVP Portal Overview
 
 Last updated: May 25, 2023
@@ -37,41 +27,3 @@ Through the portal, post-completion practical training students in F-1 or M-1 st
 SEVIS and the SEVP Portal Information Sharing
 
 The portal and SEVIS regularly share data. Data entered into the portal is sent immediately to SEVIS to update the student’s record. However, information comes from SEVIS to the portal once a day. Any updates to a student’s record in SEVIS will appear in the SEVP Portal the next day.
-
-Related Tags: SEVP Portal
-
-SEVP Portal Help Navigation
-
-          Getting Started
-
-          Make and Maintain User Password
-
-          SEVP Portal Overview
-
-          SEVP Portal Password Tips Sheet
-
-          Create an SEVP Portal Account
-
-          SEVP Portal Email Notices to Students
-
-          Maintain Information
-
-          OPT Student Reporting Requirements
-
-          Navigate the SEVP Portal
-
-          Update Employer Information
-
-          Update User Profile
-
-          Information for Schools
-
-          Benefits of the SEVP Portal
-
-          SEVIS Help Hub
-
-          Additional Resources
-
-          SEVP Portal Videos
-
-          SEVP Portal Enhancements

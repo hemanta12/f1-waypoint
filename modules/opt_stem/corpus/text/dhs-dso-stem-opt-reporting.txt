@@ -1,11 +1,3 @@
-Breadcrumb
-
-                Home
-
-                STEM OPT Hub
-
-                DSOs: STEM OPT Reporting Requirements
-
 DSOs: STEM OPT Reporting Requirements
 
 Last updated: May 25, 2023
@@ -89,37 +81,3 @@ Employer Noncompliance
 If a DSO believes that their STEM OPT student’s employer is not complying with the terms and conditions of the 24-month STEM OPT extension regulations, Form I-983 instructions and completed Form I-983, the DSO may contact SEVP at U.S. Immigration and Customs Enforcement (ICE) by following the instructions on ICE.gov. Additionally, violations of the regulation may also be reported through this Homeland Security Investigations tip form.
 
 Please note that if a student believes that their employer is not complying with the terms and conditions of the 24-month STEM OPT extension regulations and Form I-983 instructions, the student should leave that practical training opportunity and report their unemployment to the DSO. The student should be encouraged to report the employer’s noncompliance to SEVP at ICE by following the instructions found on ICE.gov. The student should also be assured that a period of unemployment caused by an employer’s noncompliance with the terms and conditions of the STEM OPT extension program requirements on its own will not affect the STEM OPT student’s status, so long as the student reports changes in employment status and adheres to the overall unemployment limits.
-
-Related Tags: STEM OPT
-
-STEM OPT Hub Navigation
-
-          For Students
-
-          For Schools
-
-          DSOs: Recommending Students for the STEM OPT Extension
-
-          DSOs: STEM OPT Reporting Requirements
-
-          DSOs and the Form I-983
-
-          For Employers
-
-          Employers and the Form I-983
-
-          Why STEM OPT is Good for Small Business
-
-          Employer Site Visits
-
-          Employers: STEM OPT Reporting Requirements
-
-          Additional Resources
-
-          Form I-983 Overview
-
-          STEM OPT Extension Overview
-
-          Eligible CIP Codes for the STEM OPT Extension
-
-          STEM OPT Frequently Asked Questions

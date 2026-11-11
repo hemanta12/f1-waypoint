@@ -1,11 +1,3 @@
-Breadcrumb
-
-                Home
-
-                STEM OPT Hub
-
-                STEM OPT Frequently Asked Questions
-
 STEM OPT Frequently Asked Questions
 
 Last updated: April 28, 2025
@@ -100,37 +92,3 @@ No. The STEM OPT final rule did not change H-1B visa policies.
 Is a STEM OPT extension a way to avoid the requirements of an H-1B visa?
 
 No. Unlike the H-1B nonimmigrant classification, where an employer submits a petition for a nonimmigrant worker to temporarily perform services in a specialty occupation, STEM OPT offers certain F-1 students an opportunity to further the knowledge that they received during U.S. coursework. A student chooses to participate in STEM OPT as a way to complement their academic experience in the United States and pursuant to an individualized Training Plan that helps ensure that the STEM OPT experience furthers the student’s course of study.
-
-Related Tags: STEM OPT
-
-STEM OPT Hub Navigation
-
-          For Students
-
-          For Schools
-
-          DSOs: Recommending Students for the STEM OPT Extension
-
-          DSOs: STEM OPT Reporting Requirements
-
-          DSOs and the Form I-983
-
-          For Employers
-
-          Employers and the Form I-983
-
-          Why STEM OPT is Good for Small Business
-
-          Employer Site Visits
-
-          Employers: STEM OPT Reporting Requirements
-
-          Additional Resources
-
-          Form I-983 Overview
-
-          STEM OPT Extension Overview
-
-          Eligible CIP Codes for the STEM OPT Extension
-
-          STEM OPT Frequently Asked Questions

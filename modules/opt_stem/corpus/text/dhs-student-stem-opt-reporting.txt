@@ -1,11 +1,3 @@
-Breadcrumb
-
-                Home
-
-                STEM OPT Hub
-
-                Students: STEM OPT Reporting Requirements
-
 Students: STEM OPT Reporting Requirements
 
 Last updated: July 6, 2026
@@ -58,43 +50,3 @@ Report violations through this Homeland Security Investigations tip submission f
 There are a number of enforcement and oversight mechanisms to help ensure compliance, including reporting requirements, employer site visits, periodic evaluation of a student’s training and required notification of any material changes to or deviations from the Training Plan.
 Please note that if a student believes that their employer is not complying with the 24-month STEM OPT extension regulations and Form I-983 instructions, the student should leave that practical training opportunity and report their unemployment to the DSO. A period of student unemployment, caused by an employer’s failure to comply with program requirements, on its own will not affect the STEM OPT student’s status so long as the student reports changes in employment status and adheres to the overall unemployment limits.
 The DSO at the student’s most recent SEVP-certified school is responsible for maintaining the student’s Form I-983.
-
-Related Tags: STEM OPT
-
-STEM OPT Hub Navigation
-
-          For Students
-
-          Students: Determining STEM OPT Extension Eligibility
-
-          Students: STEM OPT Reporting Requirements
-
-          Students and the Form I-983
-
-          For Schools
-
-          DSOs: Recommending Students for the STEM OPT Extension
-
-          DSOs: STEM OPT Reporting Requirements
-
-          DSOs and the Form I-983
-
-          For Employers
-
-          Employers and the Form I-983
-
-          Why STEM OPT is Good for Small Business
-
-          Employer Site Visits
-
-          Employers: STEM OPT Reporting Requirements
-
-          Additional Resources
-
-          Form I-983 Overview
-
-          STEM OPT Extension Overview
-
-          Eligible CIP Codes for the STEM OPT Extension
-
-          STEM OPT Frequently Asked Questions

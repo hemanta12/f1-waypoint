@@ -1,11 +1,3 @@
-Breadcrumb
-
-                Home
-
-                STEM OPT Hub
-
-                Form I-983 Overview
-
 Form I-983 Overview
 
 Last updated: October 2, 2025
@@ -46,37 +38,3 @@ The STEM OPT student is responsible for conducting an annual self-evaluation bas
 The student must submit the 12-month and final evaluations no later than 10 days following the conclusion of the appropriate reporting period. If an opportunity ends early the student must submit the final evaluation within 10 days following the conclusion of the opportunity. Not submitting a final evaluation would be a violation of the terms of Form I-983, “Training Plan for STEM OPT Students,” and may jeopardize the student’s nonimmigrant status.
 The employer must review and sign the self-evaluation to verify its accuracy. Although not required, employers may elect to attach and submit their own evaluation of a student’s progress. Once completed and signed by the appropriate individual in the employer’s organization, the STEM OPT student must return the “Evaluation of Student Progress” to their DSO, who will keep it in the student’s record.
 For more information on the STEM OPT extension training requirement, visit the Form I-983 resource pages for students, school officials and employers.
-
-Related Tags: STEM OPT
-
-STEM OPT Hub Navigation
-
-          For Students
-
-          For Schools
-
-          DSOs: Recommending Students for the STEM OPT Extension
-
-          DSOs: STEM OPT Reporting Requirements
-
-          DSOs and the Form I-983
-
-          For Employers
-
-          Employers and the Form I-983
-
-          Why STEM OPT is Good for Small Business
-
-          Employer Site Visits
-
-          Employers: STEM OPT Reporting Requirements
-
-          Additional Resources
-
-          Form I-983 Overview
-
-          STEM OPT Extension Overview
-
-          Eligible CIP Codes for the STEM OPT Extension
-
-          STEM OPT Frequently Asked Questions

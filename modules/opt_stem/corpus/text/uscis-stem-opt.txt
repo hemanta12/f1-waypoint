@@ -1,9 +1,5 @@
 Optional Practical Training Extension for STEM Students (STEM OPT)
 
-  Alert Type info
-
-ALERT: Please remember that photos submitted to USCIS must be unmounted and unretouched. Unretouched means the photos must not be edited or digitally enhanced. The submission of any mounted or retouched images will delay the processing of your application and may prompt USCIS to require that you appear at an Applicant Support Center to verify your identity.
-
 Certain F-1 students who receive science, technology, engineering, and mathematics (STEM) degrees may apply for a 24-month extension of their post-completion optional practical training (OPT).
 
 Eligibility for the STEM OPT Extension
@@ -87,18 +83,3 @@ For more information, please refer to the USCIS Policy Manual and the DHS ST
 Last Reviewed/Updated:
 
 01/30/2026
-
-    Was this page helpful?
-
-          Yes
-
-          No
-
-        This page was not helpful because the content:
-
-Select a reasonhas too little informationhas too much informationis confusingis out of dateother
-
-        How can the content be improved?
-
-0 / 2000
-To protect your privacy, please do not include any personal information in your feedback. Review our Privacy Policy.

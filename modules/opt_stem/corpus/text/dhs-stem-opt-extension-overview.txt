@@ -1,11 +1,3 @@
-Breadcrumb
-
-                Home
-
-                STEM OPT Hub
-
-                STEM OPT Extension Overview
-
 STEM OPT Extension Overview
 
 Last updated: April 28, 2025
@@ -58,37 +50,3 @@ The Cap-Gap extension allows such students to automatically extend the duration 
 Entrepreneurship and Employer-Employee Relationships
 F-1 students cannot qualify for STEM OPT extensions unless they will be bona fide employees of the employer signing the Form I-983 because F-1 students may not provide employer attestations on their own behalf. However, STEM OPT applicants can participate in a start-up or small business so long as all regulatory requirements are met, including that the employer adheres to the training plan requirements, remains in good standing with E-Verify, will provide compensation to the STEM OPT student commensurate to that provided to similarly situated U.S. workers, and has the resources to comply with the proposed training plan. The employer that signs the Training Plan must be the same entity that employs the student and provides the practical training experience.
 Explore the STEM OPT Hub to find more information and additional STEM OPT resources for students, school officials and employers.
-
-Related Tags: STEM OPT
-
-STEM OPT Hub Navigation
-
-          For Students
-
-          For Schools
-
-          DSOs: Recommending Students for the STEM OPT Extension
-
-          DSOs: STEM OPT Reporting Requirements
-
-          DSOs and the Form I-983
-
-          For Employers
-
-          Employers and the Form I-983
-
-          Why STEM OPT is Good for Small Business
-
-          Employer Site Visits
-
-          Employers: STEM OPT Reporting Requirements
-
-          Additional Resources
-
-          Form I-983 Overview
-
-          STEM OPT Extension Overview
-
-          Eligible CIP Codes for the STEM OPT Extension
-
-          STEM OPT Frequently Asked Questions

@@ -153,3 +153,29 @@ def test_reextract_moves_hash_but_not_dates(tmp_path):
     assert second[0].content_hash != first[0].content_hash
     assert second[0].retrieved_at == first[0].retrieved_at
     assert second[0].verified_on == first[0].verified_on
+
+
+def test_page_furniture_inside_main_is_dropped(tmp_path):
+    f = tmp_path / "a.html"
+    f.write_text(
+        "<main><div class='region region-breadcrumb'><ol><li>Home</li></ol></div>"
+        "<aside><div><p>Side link</p><div><p>Nested link</p></div></div></aside>"
+        "<div class='alert-message'><div><p>Photo banner</p></div></div>"
+        "<h2>Unemployment</h2><p>90 days.</p>"
+        "<div class='alert'><p>DHS rule notice</p></div>"
+        "<div class='field field--name-field-topics'>Related Tags: OPT</div>"
+        "<form class='admin-feedback-form usa-form'><select><option>Select a reason</option>"
+        "</select></form><p>After form.</p></main>"
+    )
+    text = extract_text(f)
+    for junk in (
+        "Home",
+        "Side link",
+        "Nested link",
+        "Photo banner",
+        "Related Tags",
+        "Select a reason",
+    ):
+        assert junk not in text, junk
+    for kept in ("Unemployment", "90 days.", "DHS rule notice", "After form."):
+        assert kept in text, kept

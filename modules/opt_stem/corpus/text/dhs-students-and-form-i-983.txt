@@ -1,11 +1,3 @@
-Breadcrumb
-
-                Home
-
-                STEM OPT Hub
-
-                Students and the Form I-983
-
 Students and the Form I-983
 
 Last updated: November 26, 2024
@@ -88,44 +80,4 @@ Address whether there are any modifications to the objectives and goals for proj
 
 Once the evaluations are complete, the student must collect signatures from their employer and return the form to their DSO, who will keep it in the student’s student record. The student submits the first signed assessment to their DSO within 12 months of the start date listed on the form. The student needs to submit a second and final evaluation that recaps all the training and knowledge acquired during the complete training period to their DSO at the end of the STEM OPT extension.
 
-For more information about the Form I-983 and the formal training plan requirement for STEM OPT extension, visit the Form I-983 Overview. 
-
-Related Tags: STEM OPT
-
-STEM OPT Hub Navigation
-
-          For Students
-
-          Students: Determining STEM OPT Extension Eligibility
-
-          Students: STEM OPT Reporting Requirements
-
-          Students and the Form I-983
-
-          For Schools
-
-          DSOs: Recommending Students for the STEM OPT Extension
-
-          DSOs: STEM OPT Reporting Requirements
-
-          DSOs and the Form I-983
-
-          For Employers
-
-          Employers and the Form I-983
-
-          Why STEM OPT is Good for Small Business
-
-          Employer Site Visits
-
-          Employers: STEM OPT Reporting Requirements
-
-          Additional Resources
-
-          Form I-983 Overview
-
-          STEM OPT Extension Overview
-
-          Eligible CIP Codes for the STEM OPT Extension
-
-          STEM OPT Frequently Asked Questions
+For more information about the Form I-983 and the formal training plan requirement for STEM OPT extension, visit the Form I-983 Overview.
