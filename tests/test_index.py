@@ -3,7 +3,7 @@ import json
 import numpy as np
 import pytest
 
-from core.index import Index, build_index, clean_results
+from core.index import Index, build_index, clean_results, rrf
 
 
 def _corpus(tmp_path, docs):
@@ -126,3 +126,31 @@ def test_pieces_of_one_section_join_in_page_order_at_the_best_rank():
 def test_no_results_gives_no_passages():
 
     assert clean_results([]) == []
+
+
+def _c(cid):
+    return {"chunk_id": cid}
+
+
+def _ids(results):
+    return [c["chunk_id"] for c, _ in results]
+
+
+def test_rrf_chunk_in_both_lists_beats_top_of_one():
+    vector = [(_c("a"), 0.9), (_c("b"), 0.8)]
+    bm25 = [(_c("c"), 12.0), (_c("b"), 9.0)]
+    assert _ids(rrf(vector, bm25)) == ["b", "a", "c"]
+
+
+def test_rrf_ignores_raw_scores():
+    assert _ids(rrf([(_c("a"), 0.01), (_c("b"), 99.0)])) == ["a", "b"]
+
+
+def test_rrf_tie_keeps_first_list_order():
+    assert _ids(rrf([(_c("a"), 1.0)], [(_c("b"), 1.0)])) == ["a", "b"]
+
+
+def test_rrf_one_or_both_lists_empty():
+    assert _ids(rrf([(_c("a"), 1.0), (_c("b"), 0.5)], [])) == ["a", "b"]
+    assert rrf([], []) == []
+    assert rrf() == []

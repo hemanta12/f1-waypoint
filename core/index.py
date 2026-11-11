@@ -12,7 +12,7 @@ from pathlib import Path
 
 import numpy as np
 
-from core.chunk import embed_input, structure_chunks
+from core.chunk import Chunk, embed_input, structure_chunks
 from core.registry import hash_text
 from core.report import corpus_hash
 from core.snapshot import extract_sections, find_raw
@@ -104,6 +104,33 @@ class Index:
     def retrieve(self, query_vector: np.ndarray, k: int = 5, fetch: int = 10) -> list[dict]:
         """Top k passages for the generator: search `fetch` chunks, then clean them."""
         return clean_results(self.search(query_vector, fetch), k)
+
+
+def chunk_text(chunk: dict) -> str:
+    """The text every search method reads for a stored chunk: the same input the
+    embedder saw, so vector, BM25 and reranker scores compare like with like."""
+    return embed_input(
+        Chunk(
+            chunk_id=chunk["chunk_id"],
+            doc_id=chunk["doc_id"],
+            text=chunk["text"],
+            section=chunk["section"],
+        )
+    )
+
+
+RRF_K = 60
+
+
+def rrf(*ranked: list[tuple[dict, float]], k: int = RRF_K) -> list[tuple[dict, float]]:
+    """Reciprocal rank fusion: a chunk scores the sum of 1 / (k + rank) over the lists
+    it appears in. Only ranks count, so cosine and BM25 scores never need comparing.
+    Ties keep first-seen order (the first list wins), so results are repeatable."""
+    fused: dict[str, list] = {}
+    for results in ranked:
+        for rank, (chunk, _) in enumerate(results, start=1):
+            fused.setdefault(chunk["chunk_id"], [chunk, 0.0])[1] += 1 / (k + rank)
+    return sorted(((c, s) for c, s in fused.values()), key=lambda x: -x[1])
 
 
 NEAR_COPY = 0.7
