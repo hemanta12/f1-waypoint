@@ -10,9 +10,9 @@ The stack is boring on purpose. The interesting parts are the eval and the retri
 | Lint, format, test | ruff, pytest, pre-commit |
 | Backend | FastAPI |
 | Store | SQLite (documents, chunks, hashes) |
-| Vector search | sqlite-vec, with FAISS as the alternative |
+| Vector search | Plain SQLite with numpy cosine search |
 | Keyword search | BM25 through a library, with a tokenizer that keeps form numbers intact |
-| Embeddings, reranker | Chosen by eval, ablation table in the README |
+| Embeddings, reranker | BGE-small embeddings and MiniLM-L-12 reranker via fastembed, chosen by eval |
 | LLM | Low-cost models through OpenRouter, two roles, pinned, chosen by eval |
 | Ingestion | httpx, trafilatura or BeautifulSoup, PyMuPDF |
 | Eval | Own harness, YAML questions validated with pydantic |
@@ -26,7 +26,7 @@ The stack is boring on purpose. The interesting parts are the eval and the retri
 
 **One SQLite file.** The corpus is small, likely hundreds to low thousands of chunks, so a managed vector database adds cost and operations with no benefit. Documents, chunks and vectors sit together, so removing a chunk removes its vector, and delete-sync is a plain `DELETE` in a transaction. That keeps the freshness story easy to explain and test.
 
-**sqlite-vec over FAISS.** Vectors live next to chunks in one file. FAISS is better known but lives outside the database, so two stores must be kept in sync. At this size, brute-force search is fast enough, and the index type is not worth agonizing over.
+**No vector extension.** Vectors are stored next to their chunks in SQLite and searched with one numpy matrix product. At about 1,300 chunks a search takes milliseconds, so an extension or FAISS adds a dependency for no gain.
 
 **BM25 through a library.** Form numbers such as I-983 and I-765 and citations such as 8 CFR 214.2(f)(10) are keyword queries, not semantic ones. A library keeps tokenization under my control. One unit test proves these terms survive tokenization as searchable terms, and that test is the clearest explanation of why hybrid retrieval exists. SQLite FTS5 is the fallback.
 

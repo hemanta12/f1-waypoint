@@ -211,7 +211,7 @@ A scheduled job re-crawls every source, compares content hashes, and lists chang
 | Failure | Handling |
 |---|---|
 | Cited passage does not exist or lacks the claimed number | Citation check fails, passages shown with no synthesized answer |
-| Near-duplicate chunks | Deduplicate by document and section before generation |
+| Near-duplicate chunks | Drop copies from other pages, join pieces of the same section, before generation |
 | Source page removed or restructured | Freshness job flags it, eval fails on the affected gold passages |
 | Table extraction mangled | Manual spot-check, table-aware extraction, registry validation |
 | Model API down or over budget | Passages only, with a notice |

@@ -47,9 +47,23 @@ Chunking comparison, same embedding model and retriever for every row, before co
 
 Structure-aware chunks split at section headings and never inside a sentence. Fixed-size chunks cut every N words with a 20 percent overlap. The other-passage alternatives were found by reviewing the structure-aware 150 run's misses, so the gap to the other rows may be somewhat overstated.
 
+**Hybrid retrieval (Phase 4):** Recall@5 is **0.96**, up from 0.89. Each question is searched two ways, by vector search and by keyword search (BM25). The two result lists are merged by reciprocal rank fusion, and a cross-encoder reranker picks the top 5. Every piece was kept only if the eval showed it helped:
+
+| Method | Recall@5 | Right passage among candidates | Notes |
+|---|---|---|---|
+| BM25 alone | 0.62 | 0.69 | Own tokenizer keeps I-983 and 8 CFR 214.2(f)(10) whole; dropping common words raised it from 0.51 |
+| Vector alone (BGE-small) | 0.89 | 0.89 | Phase 3 baseline |
+| Hybrid, no reranker | 0.85 | 0.96 | Fusion alone lowers the top 5 but finds the right passage more often |
+| Vector + MiniLM-L-12 reranker | 0.89 | 0.89 | A reranker cannot help without BM25's extra candidates |
+| Hybrid + MiniLM-L-6 reranker | 0.95 | 0.96 | |
+| **Hybrid + MiniLM-L-12 reranker** | **0.96** | 0.96 | Chosen; about 0.6 s per question on a laptop CPU |
+| Same chain with BGE-base embeddings | 0.93 | 0.95 | The bigger embedding model was worse |
+
+BM25 did not win on form numbers, which vector search also handled. It won on exact domain phrases such as "unemployment clock" and "volunteer", where vector search ranked the right passage far down. The two remaining misses are vague or differently worded questions, such as "how long does OPT last", where the retrieved passages state other durations. Phase 4 also removed website menus and banners that sat inside the pages' main content; the vector baseline stayed at 0.89.
+
 ## Stack
 
-Python 3.12 with FastAPI, SQLite for chunks and vectors, BGE-small embeddings through fastembed (ONNX Runtime, no PyTorch), React with Vite and TypeScript, hosted on Cloudflare Pages and Railway. Details and reasoning are in [Tech Stack](docs/core/Tech%20Stack.md).
+Python 3.12 with FastAPI, SQLite for chunks and vectors, BGE-small embeddings, BM25 through bm25s and a MiniLM-L-12 reranker, the models through fastembed (ONNX Runtime, no PyTorch), React with Vite and TypeScript, hosted on Cloudflare Pages and Railway. Details and reasoning are in [Tech Stack](docs/core/Tech%20Stack.md).
 
 ## Docs
 
