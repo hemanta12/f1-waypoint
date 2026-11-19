@@ -11,7 +11,7 @@ The stack is boring on purpose. The interesting parts are the eval and the retri
 | Backend | FastAPI |
 | Store | SQLite (documents, chunks, hashes) |
 | Vector search | Plain SQLite with numpy cosine search |
-| Keyword search | BM25 through a library, with a tokenizer that keeps form numbers intact |
+| Keyword search | BM25 through bm25s, with my own tokenizer that keeps form numbers intact |
 | Embeddings, reranker | BGE-small embeddings and MiniLM-L-12 reranker via fastembed, chosen by eval |
 | LLM | Low-cost models through OpenRouter, two roles, pinned, chosen by eval |
 | Ingestion | httpx, trafilatura or BeautifulSoup, PyMuPDF |
@@ -28,9 +28,11 @@ The stack is boring on purpose. The interesting parts are the eval and the retri
 
 **No vector extension.** Vectors are stored next to their chunks in SQLite and searched with one numpy matrix product. At about 1,300 chunks a search takes milliseconds, so an extension or FAISS adds a dependency for no gain.
 
-**BM25 through a library.** Form numbers such as I-983 and I-765 and citations such as 8 CFR 214.2(f)(10) are keyword queries, not semantic ones. A library keeps tokenization under my control. One unit test proves these terms survive tokenization as searchable terms, and that test is the clearest explanation of why hybrid retrieval exists. SQLite FTS5 is the fallback.
+**BM25 through bm25s.** Form numbers such as I-983 and I-765 and citations such as 8 CFR 214.2(f)(10) are keyword queries, not semantic ones. bm25s accepts my own token lists, so tokenization stays under my control. One unit test proves these terms survive tokenization as searchable terms, and that test is the clearest explanation of why hybrid retrieval exists. SQLite FTS5 is the fallback.
 
-**Embeddings and reranker by eval.** Each is compared against at least one alternative on Recall@5, and the results are published as an ablation table. Local pinned models are reproducible and need no API in CI. Hosted models are easy but can drift and silently change scores, so any hosted model is pinned and recorded with every run.
+**Hybrid retrieval.** Vector and keyword search each find passages the other misses. Reciprocal rank fusion merges the two lists using ranks only, so nothing is tuned on the eval set, and the reranker orders the merged pile.
+
+**Embeddings and reranker by eval.** Each is compared against at least one alternative on Recall@5, and the results are published as an ablation table. Local pinned models are reproducible and need no API in CI. Hosted models are easy but can drift and silently change scores, so any hosted model is pinned and recorded with every run. BGE-small beat the larger BGE-base in the full chain (0.96 against 0.93), and the 12-layer MiniLM reranker beat the 6-layer one (0.96 against 0.95) at about 0.6 s per question.
 
 **Models through OpenRouter.** A public demo makes premium models too expensive. Two roles, a classifier that labels questions and a generator that writes grounded answers, each map to a pinned model and provider in one config file with fallback routing off, so a silent switch cannot change eval scores. Structured output (answer, claims, chunk IDs) is required so the citation checker can verify every claim in code. Changing a model fails CI until a new eval run is accepted. The product names its model provider in its privacy line.
 

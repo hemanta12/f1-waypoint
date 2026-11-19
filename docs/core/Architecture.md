@@ -50,8 +50,8 @@ flowchart TD
   UI["Web UI"] --> API["API"]
   API --> SCR{"Screen<br/>length cap, ID reject, prefilter"}
   SCR -->|"rejected"| REJ["Rejection, no model call"]
-  SCR -->|"passed"| RET["Hybrid retrieval<br/>vector + BM25 fusion"]
-  RET --> RR["Reranker"]
+  SCR -->|"passed"| RET["Hybrid retrieval<br/>vector + BM25, rank fusion"]
+  RET --> RR["Reranker<br/>(cross-encoder)"]
   RR --> GATE{"Refusal gate<br/>(detail below)"}
   GATE -->|"refuse"| REF["Refusal response"]
   GATE -->|"answerable or case-specific"| GEN["Grounded generation"]

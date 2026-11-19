@@ -70,7 +70,7 @@ Order of checks: input screen, then retrieval, then the score threshold, then a 
 
 ## Success metrics
 
-Each target is reset after its first measured run. Recall@5 was reset after the retrieval baseline (0.89, vector search only, November 2026); the rest are still starting points.
+Each target is reset after its first measured run. Recall@5 was reset after the retrieval baseline (0.89, vector search only, November 2026); hybrid retrieval with a reranker then measured 0.96 (Phase 4). The rest are still starting points.
 
 | Metric | What it measures | Target |
 |---|---|---|

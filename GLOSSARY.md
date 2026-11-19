@@ -42,3 +42,13 @@ _Avoid_: Last updated
 **Source tier**:
 Where a document comes from. v1 has one tier, `official` (government publication: USCIS, DHS, ICE, eCFR). Deadlines and numbers come from it only, and every citation shows its tier. University guides are not used; for a school's own process the product refers the user to that school's international office.
 _Avoid_: Source quality, trust level
+
+**Hybrid retrieval**:
+Vector search and BM25 keyword search each return their top 10 chunks, reciprocal rank fusion merges them into one candidate pool, and the reranker orders the pool.
+
+**Candidate pool**:
+The merged chunks from vector and BM25 search before reranking, up to 20. The reranker can only promote what is in the pool, so pool recall caps Recall@5.
+
+**Retrieval score**:
+The reranker's raw score for a passage, about -10 to +10, not 0 to 1. The `retrieval_threshold` in `module.yaml` sits on this scale.
+_Avoid_: Confidence, similarity, cosine score

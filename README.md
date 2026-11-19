@@ -24,7 +24,7 @@ Questions about one person's case, predictions such as EAD arrival or approval o
 
 A retrieval-augmented generation system built without an orchestration framework.
 
-- Hybrid retrieval: BM25 plus vector search, then a reranker. The BM25 tokenizer keeps form numbers like I-983 and citations like 8 CFR 214.2(f)(10) intact.
+- Hybrid retrieval: BM25 plus vector search merged by reciprocal rank fusion, then a cross-encoder reranker. The BM25 tokenizer keeps form numbers like I-983 and citations like 8 CFR 214.2(f)(10) intact.
 - A refusal gate runs before generation: input screen, retrieval score threshold, then a question classifier.
 - A citation check runs after generation. If it fails, the user sees the source passages instead of an unverified answer.
 - A scheduled job hashes the official pages, detects changes, re-runs the eval and syncs deletions.
