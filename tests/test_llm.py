@@ -45,6 +45,7 @@ def test_request_is_pinned_and_strict():
         "order": ["acme"],
         "allow_fallbacks": False,
         "require_parameters": True,
+        "data_collection": "deny",
     }
     assert body["model"] == "vendor/model"
     assert body["max_tokens"] == 100

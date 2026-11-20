@@ -95,6 +95,8 @@ def complete_json[T: BaseModel](
             "order": [role.provider],
             "allow_fallbacks": False,
             "require_parameters": True,
+            # Questions can describe a person's immigration situation; no provider may keep them.
+            "data_collection": "deny",
         },
     }
     try:
