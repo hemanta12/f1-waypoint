@@ -51,6 +51,10 @@
     - doc_id: uscis-stem-opt
       section: Eligibility for the STEM OPT Extension
       quote: If you enroll in a new academic program in the future and earn another qualifying STEM degree at a higher educational level, you may be eligible for one additional 24-month STEM OPT extension.
+      alternates:
+        - doc_id: uscis-policy-manual-practical-training
+          section: "3. STEM OPT Extension"
+          quote: "If, in the future, an F-1 student enrolls in a new academic program and earns another qualifying STEM degree at a higher educational level, the student may be eligible for one additional 24-month STEM OPT extension, for a total of two lifetime STEM OPT extensions."
 
 - id: near-miss-stem-volunteer
   category: near_miss

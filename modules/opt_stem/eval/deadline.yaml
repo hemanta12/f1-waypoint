@@ -7,6 +7,10 @@
     - doc_id: dhs-unemployment-counter
       section: General Information
       quote: "Post-completion OPT: 90 days."
+      alternates:
+        - doc_id: ecfr-8-cfr-214-2
+          section: "8 CFR 214.2(f)"
+          quote: "Students may not accrue an aggregate of more than 90 days of unemployment during any post-completion OPT period"
 
 - id: stem-unemployment-not-fresh
   category: deadline
@@ -27,6 +31,10 @@
     - doc_id: dhs-stem-opt-extension-overview
       section: Unemployment
       quote: DHS allows STEM OPT students an additional 60 days of unemployment during the 24-month STEM OPT extension period.
+      alternates:
+        - doc_id: dhs-student-stem-opt-reporting
+          section: Unemployment
+          quote: "Students who are granted a 24-month STEM OPT extension are allowed an additional 60 days of unemployment beyond the initial post-completion OPT limit."
 
 - id: unemployment-clock-start
   category: deadline
@@ -132,6 +140,7 @@
   question: how long can i stay in the US after my OPT ends
   should_refuse: false
   expected_facts: ["60 days beyond the EAD expiration date"]
+  forbidden_facts: ["30-day"]
   gold:
     - doc_id: uscis-policy-manual-practical-training
       section: Post-completion OPT
@@ -180,6 +189,7 @@
   question: my H-1B got filed but my OPT ends before october, until when does cap gap cover me
   should_refuse: false
   expected_facts: ["April 1"]
+  forbidden_facts: ["October 1"]
   gold:
     - doc_id: dhs-stem-opt-extension-overview
       section: Cap-Gap Extension
@@ -228,6 +238,9 @@
         - doc_id: ecfr-8-cfr-214-2
           section: "8 CFR 214.2(f)"
           quote: "A student may not begin OPT employment prior to the approved start date on his or her Employment Authorization Document"
+        - doc_id: uscis-policy-manual-practical-training
+          section: "5. OPT Filing"
+          quote: "The student may not begin OPT until the date indicated on the student’s employment authorization document."
 
 - id: volunteer-stops-clock
   category: deadline

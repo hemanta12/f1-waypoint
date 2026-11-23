@@ -1,7 +1,7 @@
 """The last accepted eval run, and the check that llm.yaml still matches it.
 
 uv run python -m core.accepted check
-uv run python -m core.accepted accept runs/refusal-<timestamp>
+uv run python -m core.accepted accept runs/<refusal-or-answers>-<timestamp>
 
 A change to a model, provider or token cap changes what the eval measured, so it needs a new
 accepted run before it can pass CI.
@@ -16,6 +16,13 @@ from core.config import LlmConfig, load_llm
 REPO = Path(__file__).resolve().parent.parent
 ACCEPTED = REPO / "modules" / "opt_stem" / "accepted_run.json"
 METRICS = ("questions", "refusal_accuracy", "reason_accuracy", "referral_accuracy", "errors")
+ANSWER_METRICS = (
+    "answerable_cases",
+    "fallback_rate",
+    "citation_correctness",
+    "deadline_accuracy",
+    "errors",
+)
 
 
 def differences(llm: LlmConfig, accepted: dict) -> list[str]:
@@ -30,7 +37,7 @@ def differences(llm: LlmConfig, accepted: dict) -> list[str]:
 
 
 def accept(run_dir: Path, out: Path = ACCEPTED) -> dict:
-    """Record a finished eval run as the one llm.yaml is checked against."""
+    """Record a finished eval run (refusal or answers) as the one llm.yaml is checked against."""
     body = json.loads((run_dir / "results.json").read_text())
     if body["errors"]:
         raise SystemExit(f"{run_dir.name} had {body['errors']} errors; accept a clean run.")
@@ -40,7 +47,7 @@ def accept(run_dir: Path, out: Path = ACCEPTED) -> dict:
         "git_sha": body["run"]["git_sha"],
         "threshold": body["run"]["retriever"]["threshold"],
         "llm": body["run"]["llm"],
-        "metrics": {k: body[k] for k in METRICS},
+        "metrics": {k: body[k] for k in (METRICS if "questions" in body else ANSWER_METRICS)},
     }
     out.write_text(json.dumps(record, indent=2) + "\n")
     return record

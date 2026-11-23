@@ -4,7 +4,7 @@ classifier:
   max_output_tokens: 100
   temperature: 0
 generator:
-  model: unset
-  provider: unset
+  model: deepseek/deepseek-v4-flash
+  provider: deepinfra/fp8
   max_output_tokens: 600
   temperature: 0

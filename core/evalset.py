@@ -46,6 +46,8 @@ class EvalCase(_Strict):
     question: str = Field(min_length=1)
     should_refuse: bool
     expected_facts: list[str] = []
+    # Numbers or phrases an answer must not state, such as a superseded rule in an old passage.
+    forbidden_facts: list[str] = []
     gold: list[GoldPassage] = []
     expected_reason: Reason | None = None
     expected_referral: str | None = None

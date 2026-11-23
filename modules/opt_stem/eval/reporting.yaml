@@ -135,6 +135,10 @@
     - doc_id: dhs-student-stem-opt-reporting
       section: Changing Employers
       quote: In cases where the period of time between employers is longer than 10 days, the student must first report the loss of employment to the DSO and later submit a new Form I-983.
+      alternates:
+        - doc_id: dhs-dso-stem-opt-reporting
+          section: Changing Employers
+          quote: In cases where the period of time between employers is longer than 10 days, the student must first report the loss of employment to the DSO and later submit a new Form I-983.
 
 - id: stem-employer-reports-termination
   category: reporting

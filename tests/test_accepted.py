@@ -64,3 +64,24 @@ def test_llm_yaml_matches_the_last_accepted_run():
         + "\nRun the eval, then: uv run python -m core.accepted accept runs/<run>"
     )
     assert load_llm(REPO / "llm.yaml") and ACCEPTED.exists()
+
+
+def test_accept_takes_an_answers_run(tmp_path):
+    run = tmp_path / "answers-1"
+    run.mkdir()
+    body = {
+        "run": {
+            "created_at": "t",
+            "git_sha": "abc",
+            "retriever": {"threshold": -2.0},
+            "llm": _accepted()["llm"],
+        },
+        "answerable_cases": 52,
+        "fallback_rate": 0.02,
+        "citation_correctness": 0.9,
+        "deadline_accuracy": 0.95,
+        "errors": 0,
+    }
+    (run / "results.json").write_text(json.dumps(body))
+    record = accept(run, tmp_path / "accepted.json")
+    assert record["metrics"]["fallback_rate"] == 0.02 and "questions" not in record["metrics"]
