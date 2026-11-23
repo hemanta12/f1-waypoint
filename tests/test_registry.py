@@ -77,3 +77,13 @@ def test_real_source_list_loads_with_unique_ids():
     root = Path(__file__).resolve().parent.parent
     sources = load_sources(root / "modules" / "opt_stem" / "sources.yaml")
     assert len(sources) == len({s.doc_id for s in sources}) > 0
+
+
+def test_every_corpus_document_has_a_verified_on_date():
+    from pathlib import Path
+
+    from core.registry import load_verified_on
+
+    corpus = Path(__file__).resolve().parent.parent / "modules" / "opt_stem" / "corpus"
+    dates = load_verified_on(corpus)
+    assert dates and all(isinstance(d, date) for d in dates.values())

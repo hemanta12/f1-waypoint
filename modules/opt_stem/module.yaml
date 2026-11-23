@@ -4,6 +4,22 @@ covered_topics:
   - STEM OPT extension
   - Forms I-765, I-983 and I-20 as they relate to OPT
 retrieval_threshold: -2.0
+disclaimer: >-
+  This is general information from official sources, not legal advice. Your school's DSO
+  can confirm how it applies to you.
+term_aliases:
+  CPT: curricular practical training
+  DHS: Department of Homeland Security
+  DSO: designated school official
+  EAD: Employment Authorization Document
+  ICE: Immigration and Customs Enforcement
+  OPT: optional practical training
+  SEVIS: Student and Exchange Visitor Information System
+  SEVP: Student and Exchange Visitor Program
+  STEM: science, technology, engineering
+  US: United States
+  USCIS: U.S. Citizenship and Immigration Services
+generic_terms: [OPT, STEM]
 refusals:
   weak_retrieval: >-
     I couldn't find a reliable answer to this in the official OPT and STEM OPT sources.

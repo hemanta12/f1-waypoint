@@ -29,6 +29,13 @@ class ModuleConfig(_Strict):
     id: str
     covered_topics: list[str] = Field(min_length=1)
     retrieval_threshold: float
+    disclaimer: str = Field(min_length=1)
+    # Acronym -> spelled-out form, so a direct answer that says "EAD" matches a quote that
+    # says "Employment Authorization Document".
+    term_aliases: dict[str, str] = {}
+    # Terms that name the module's subject (OPT, STEM). A summary may say them without a quote
+    # repeating them; every other acronym and name must appear in a quote.
+    generic_terms: list[str] = []
     refusals: dict[Reason, str]
     referrals: dict[str, Referral]
     default_referrals: dict[Reason, str]
@@ -59,6 +66,14 @@ class ModuleConfig(_Strict):
         return self.default_referrals[reason]
 
 
+class NotInForce(_Strict):
+    doc_id: str
+    reason: str = Field(min_length=1)
+    quotes: list[str] = Field(min_length=1)
+    # Shown to the student when a question would have retrieved one of these passages.
+    notice: str | None = None
+
+
 class RoleConfig(_Strict):
     model: str
     provider: str
@@ -81,3 +96,10 @@ def load_module(path: Path) -> ModuleConfig:
 
 def load_llm(path: Path) -> LlmConfig:
     return LlmConfig.model_validate(_read(path))
+
+
+def load_not_in_force(path: Path) -> list[NotInForce]:
+    """An absent file means every passage is in force."""
+    if not Path(path).exists():
+        return []
+    return [NotInForce.model_validate(e) for e in _read(path) or []]

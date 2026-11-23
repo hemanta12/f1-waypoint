@@ -1,4 +1,5 @@
 import hashlib
+import json
 import re
 from datetime import date
 from pathlib import Path
@@ -38,6 +39,12 @@ def load_sources(path: Path) -> list[Source]:
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate doc_id in sources")
     return sources
+
+
+def load_verified_on(corpus_dir: Path) -> dict[str, date]:
+    """doc_id -> the date its page was last confirmed against the live source."""
+    docs = json.loads((Path(corpus_dir) / "registry.json").read_text())
+    return {d["doc_id"]: date.fromisoformat(d["verified_on"]) for d in docs}
 
 
 def normalize_text(text: str) -> str:

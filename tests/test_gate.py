@@ -5,7 +5,7 @@ import httpx
 import pytest
 
 from core.config import LlmConfig, RoleConfig, load_module
-from core.gate import Gate
+from core.gate import ClassifierFailed, Gate
 from core.llm import LlmError
 
 MODULE = load_module(
@@ -125,12 +125,62 @@ def test_out_of_scope_uses_the_classifiers_referral():
     assert result.referral.url is None
 
 
-def test_classifier_failure_is_raised_not_hidden():
-    with pytest.raises(LlmError):
+def test_classifier_failure_is_raised_with_passages_only_when_retrieval_was_strong():
+    with pytest.raises(ClassifierFailed) as strong:
         Spy(STRONG, "answerable", fail=True).gate().run("how long does OPT last")
+    assert [p.chunk_ids for p in strong.value.passages] == [["doc-1"]]
+    assert isinstance(strong.value, LlmError)
+    with pytest.raises(ClassifierFailed) as weak:
+        Spy(WEAK, "answerable", fail=True).gate().run("how long does OPT last")
+    assert weak.value.passages == []
 
 
 def test_no_search_results_is_weak_retrieval():
     gate = Spy(STRONG, "answerable").gate()
     gate.search = lambda q: []
     assert gate.run("anything about OPT").reason == "weak_retrieval"
+
+
+def test_not_in_force_quotes_mark_their_chunks_and_a_stale_quote_fails():
+    from core.config import NotInForce
+    from core.gate import not_in_force_ids
+
+    chunks = [
+        _chunk("You have an additional  30-day period to depart.") | {"chunk_id": "doc-1"},
+        _chunk("You must report within 10 days.") | {"chunk_id": "doc-2"},
+    ]
+    entry = NotInForce(doc_id="doc", reason="postponed", quotes=["additional 30-day period"])
+    assert not_in_force_ids(chunks, [entry]) == {"doc-1"}
+    stale = entry.model_copy(update={"quotes": ["a sentence that is gone"]})
+    with pytest.raises(ValueError, match="matches no doc chunk"):
+        not_in_force_ids(chunks, [stale])
+
+
+def test_real_not_in_force_quotes_are_in_the_corpus_text():
+    from core.config import load_not_in_force
+    from core.registry import normalize_text
+
+    module_dir = Path(__file__).resolve().parent.parent / "modules" / "opt_stem"
+    for entry in load_not_in_force(module_dir / "not_in_force.yaml"):
+        text = normalize_text((module_dir / "corpus" / "text" / f"{entry.doc_id}.txt").read_text())
+        missing = [q[:60] for q in entry.quotes if normalize_text(q) not in text]
+        assert missing == [], f"{entry.doc_id}: quotes not in the corpus text: {missing}"
+
+
+def test_a_not_in_force_passage_is_dropped_and_leaves_its_notice():
+    spy = Spy(STRONG, "answerable")
+    stale = {**_chunk("The grace period is 30 days."), "chunk_id": "old-1", "not_in_force": True}
+    stale["notice"] = "A postponed rule would change this."
+    spy.search = lambda q: [(stale, 6.0), (_chunk(), STRONG)]
+    result = spy.gate().run("how long is the grace period after OPT")
+    assert result.notices == ["A postponed rule would change this."]
+    assert [p.chunk_ids for p in result.passages] == [["doc-1"]]
+    assert "30 days" not in spy.bodies[0]["messages"][-1]["content"]
+
+
+def test_a_weakly_matching_not_in_force_passage_leaves_no_notice():
+    spy = Spy(STRONG, "answerable")
+    stale = {**_chunk("Border commuter students."), "chunk_id": "old-1", "not_in_force": True}
+    stale["notice"] = "A postponed rule would change this."
+    spy.search = lambda q: [(_chunk(), STRONG), (stale, 1.0)]
+    assert spy.gate().run("how do i report a new employer").notices == []
