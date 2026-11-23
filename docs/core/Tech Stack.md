@@ -8,7 +8,7 @@ The stack is boring on purpose. The interesting parts are the eval and the retri
 |---|---|
 | Language | Python 3.12, managed with uv |
 | Lint, format, test | ruff, pytest, pre-commit |
-| Backend | FastAPI |
+| Backend | FastAPI, served by uvicorn |
 | Store | SQLite (documents, chunks, hashes) |
 | Vector search | Plain SQLite with numpy cosine search |
 | Keyword search | BM25 through bm25s, with my own tokenizer that keeps form numbers intact |
@@ -34,7 +34,7 @@ The stack is boring on purpose. The interesting parts are the eval and the retri
 
 **Embeddings and reranker by eval.** Each is compared against at least one alternative on Recall@5, and the results are published as an ablation table. Local pinned models are reproducible and need no API in CI. Hosted models are easy but can drift and silently change scores, so any hosted model is pinned and recorded with every run. BGE-small beat the larger BGE-base in the full chain (0.96 against 0.93), and the 12-layer MiniLM reranker beat the 6-layer one (0.96 against 0.95) at about 0.6 s per question.
 
-**Models through OpenRouter.** A public demo makes premium models too expensive. Two roles, a classifier that labels questions and a generator that writes grounded answers, each map to a pinned model and provider in one config file with fallback routing off, so a silent switch cannot change eval scores. Structured output (answer, claims, chunk IDs) is required so the citation checker can verify every claim in code. Changing a model fails CI until a new eval run is accepted. The product names its model provider in its privacy line.
+**Models through OpenRouter.** A public demo makes premium models too expensive. Two roles, a classifier that labels questions and a generator that writes grounded answers, each map to a pinned model and provider in one config file with fallback routing off, so a silent switch cannot change eval scores. Structured output (answer, rule, quoted claims with chunk IDs) is required so the citation checker can verify every claim in code. Changing a model fails CI until a new eval run is accepted. The product names its model provider in its privacy line.
 
 **No framework for retrieval or generation.** No LangChain or LlamaIndex, no managed vector database, no agent framework. Writing the retrieval and refusal code directly is the learning point, and fewer abstractions means every line can be explained.
 

@@ -51,14 +51,17 @@ flowchart TD
   API --> SCR{"Screen<br/>length cap, ID reject, prefilter"}
   SCR -->|"rejected"| REJ["Rejection, no model call"]
   SCR -->|"passed"| RET["Hybrid retrieval<br/>vector + BM25, rank fusion"]
-  RET --> RR["Reranker<br/>(cross-encoder)"]
+  RET --> NIF["Drop not-in-force passages"]
+  NIF --> RR["Reranker<br/>(cross-encoder)"]
   RR --> GATE{"Refusal gate<br/>(detail below)"}
   GATE -->|"refuse"| REF["Refusal response"]
   GATE -->|"answerable or case-specific"| GEN["Grounded generation"]
-  GEN --> CHK{"Citation checker"}
+  GEN --> CHK{"Quote and summary check"}
   CHK -->|"pass"| ANS["Answer or cited refusal"]
-  CHK -->|"fail"| FB["Source passages only"]
+  CHK -->|"summary fails"| QO["Verified quotes only"]
+  CHK -->|"a quote fails"| FB["Source passages only"]
   REJ --> OUT["Response to API"]
+  QO --> OUT
   REF --> OUT
   ANS --> OUT
   FB --> OUT
@@ -85,46 +88,46 @@ sequenceDiagram
   alt Screen rejects
     A-->>W: Rejection, no model call
   else Screen passes
-    A->>R: Hybrid search + rerank
+    A->>R: Hybrid search + rerank, minus not-in-force passages
     R-->>A: Top passages with scores
-    alt Top score below module threshold
+    A->>K: Classify (question, best passage)
+    K-->>A: Label
+    alt out_of_scope, prediction or legal_strategy
+      A-->>W: Refusal with reason and referral
+    else Top score below module threshold
       A-->>W: Refusal: weak_retrieval
-    else Above threshold
-      A->>K: Classify (question, passages)
-      K-->>A: Label
-      alt out_of_scope, prediction or legal_strategy
-        A-->>W: Refusal with reason and referral
-      else answerable or case_specific
-        A->>G: Passages only, answer contract
-        G-->>A: Claims with chunk IDs
-        A->>C: Verify each citation
-        alt Citations pass
-          C-->>A: OK
-          A-->>W: answerable: answer, citations, verified-on<br/>case_specific: refusal with cited general rule
-        else Citation fails
-          C-->>A: Fail
-          A-->>W: answerable: source passages, no synthesized answer<br/>case_specific: plain refusal with referral
-        end
+    else answerable or case_specific
+      A->>G: Passages only, answer contract
+      G-->>A: Quoted claims with chunk IDs, direct answer
+      A->>C: Check each quote against its chunk, then the direct answer
+      alt Quotes and answer pass
+        C-->>A: OK
+        A-->>W: answerable: answer, quotes, citations, verified-on<br/>case_specific: refusal with cited general rule
+      else Only the direct answer fails
+        C-->>A: Quotes verified
+        A-->>W: answerable: the verified quotes, no summary<br/>case_specific: refusal with the quoted rule
+      else A quote fails
+        C-->>A: Fail
+        A-->>W: answerable: source passages, no synthesized answer<br/>case_specific: plain refusal with referral
       end
     end
   end
   W-->>U: Answer card or refusal card
 ```
 
-For an answerable question, a failed citation check degrades to showing the source passages instead of a synthesized answer. For a case-specific question it degrades to a plain refusal with the referral.
+For an answerable question, a failed quote check degrades to showing the source passages instead of a synthesized answer; a failed summary alone shows the verified quotes without it. For a case-specific question a failed quote degrades to a plain refusal with the referral. If a model call fails, the student gets the passages with a notice.
 
 ## Refusal gate
 
 ```mermaid
 flowchart TD
-  Q["Question that passed the screen<br/>+ reranked passages"] --> T{"Top rerank score<br/>above module threshold?"}
+  Q["Question that passed the screen<br/>+ reranked passages"] --> C{"Classifier label<br/>(runs on every question)"}
+  C -->|"prediction, legal_strategy, out_of_scope"| RN["Refuse with that reason"]
+  C -->|"case_specific or answerable"| T{"Top rerank score<br/>above module threshold?"}
   T -->|"no"| R4["Refuse: weak_retrieval<br/>corpus does not cover this"]
-  T -->|"yes"| C{"Classifier label"}
-  C -->|"out_of_scope"| R1["Refuse: out_of_scope<br/>name what the module covers"]
-  C -->|"prediction"| R2["Refuse: prediction<br/>point to official case status"]
-  C -->|"legal_strategy"| R5["Refuse: legal_strategy<br/>point to DSO or attorney"]
-  C -->|"case_specific"| G3["Generate cited general rule"]
-  C -->|"answerable"| G0["Generate grounded answer"]
+  T -->|"yes"| D{"Label"}
+  D -->|"case_specific"| G3["Generate cited general rule"]
+  D -->|"answerable"| G0["Generate grounded answer"]
   G3 --> K3{"Citation check"}
   K3 -->|"pass"| R3["Refuse the verdict, show cited rule<br/>point to DSO"]
   K3 -->|"fail"| R3b["Plain refusal, point to DSO"]
@@ -133,7 +136,7 @@ flowchart TD
   K0 -->|"fail"| A1["Source passages only"]
 ```
 
-The threshold is checked before the classifier, so a case-specific question with weak retrieval is refused as weak retrieval. The threshold, the prefilter patterns and the classifier prompt are tuned on the eval set, and the chosen values and the failures behind them are recorded.
+The classifier runs on every question that passes the screen, and its label is combined with the retrieval score. Prediction, legal strategy and out of scope win over weak retrieval, because those refusals need no retrieved text. Weak retrieval wins over case-specific, because a case-specific response must cite the general rule. The threshold, the prefilter keywords and the classifier prompt are tuned on the eval set, and the chosen values and the failures behind them are recorded.
 
 ## Data model
 
@@ -183,24 +186,31 @@ Document IDs never change when a page is re-fetched. A chunk ID derives from the
 
 | Endpoint | Purpose |
 |---|---|
-| `POST /ask` | Ask view. Takes `question` and `module`, single-turn. Returns the answer, claims with chunk IDs, or a refusal |
+| `POST /ask` | Ask view. Takes `question` and `module`, single-turn. Returns an answer with quoted claims and citations, the quotes alone, the source passages, a refusal or a rejection |
 | `GET /scripts` | Application question scripts with cited reasons |
 | `GET /employer-brief` | One-page brief with citations and verified-on date |
 | `GET /sources/{chunk_id}` | Source drawer content: passage, document, section, official URL, tier |
-| `GET /health` | Liveness and corpus version |
+| `GET /health` | Liveness and corpus version (built) |
 | `POST /feedback` | Report a wrong answer, only after the user confirms |
 
 ```json
 {
-  "status": "answered | refused",
-  "answer": "string",
-  "claims": [{ "text": "string", "chunk_ids": ["string"] }],
-  "refusal": { "reason": "weak_retrieval | prediction | case_specific | legal_strategy | out_of_scope", "referral": "DSO | SEVP | USCIS" },
-  "verified_on": "YYYY-MM-DD"
+  "status": "answered | quotes_only | passages_only | refused | rejected",
+  "message": "string, every status but answered",
+  "answer": "string, only when the summary passed the check",
+  "rule": "string",
+  "claims": [{ "text": "exact quote", "chunk_ids": ["string"], "markers": [1] }],
+  "citations": [{ "n": 1, "chunk_id": "string", "doc_id": "string", "section": "string", "source_url": "string", "verified_on": "YYYY-MM-DD" }],
+  "not_covered": "string",
+  "notices": ["string, when a rule in the answer's area is in flux"],
+  "passages": [{ "doc_id": "string", "section": "string", "source_url": "string", "chunk_ids": ["string"], "text": "string", "verified_on": "YYYY-MM-DD" }],
+  "reason": "weak_retrieval | prediction | case_specific | legal_strategy | out_of_scope",
+  "referral": { "key": "string", "label": "string", "url": "string" },
+  "disclaimer": "string"
 }
 ```
 
-Claims are allowed on a refusal only for the case-specific reason, and they go through the same citation checker.
+`claims` and `citations` appear on `answered` and `quotes_only`, and on a `refused` response only for the case-specific reason; those quotes go through the same check. A model failure returns an error code and a plain message when retrieval was weak.
 
 ## Freshness
 
@@ -210,10 +220,12 @@ A scheduled job re-crawls every source, compares content hashes, and lists chang
 
 | Failure | Handling |
 |---|---|
-| Cited passage does not exist or lacks the claimed number | Citation check fails, passages shown with no synthesized answer |
+| A quote is not word for word in its cited passage | One-word slips are replaced by the source text; otherwise passages shown with no synthesized answer |
+| The summary uses a number, form or term that is not in the quotes | The verified quotes are shown without the summary |
+| A passage from a rule that is no longer in force | Dropped before ranking; a notice shows when the question touches it |
 | Near-duplicate chunks | Drop copies from other pages, join pieces of the same section, before generation |
 | Source page removed or restructured | Freshness job flags it, eval fails on the affected gold passages |
 | Table extraction mangled | Manual spot-check, table-aware extraction, registry validation |
-| Model API down or over budget | Passages only, with a notice |
+| Model API down or over budget | Passages with a notice; case-specific questions get a plain refusal |
 | Abuse of the public demo | Layered rate limits and spend caps |
 | Question about a topic with no module | Scoped refusal naming what the product covers today |

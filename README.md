@@ -4,7 +4,7 @@ Cited answers to F-1 OPT and STEM OPT questions, drawn only from official source
 
 F-1 Waypoint is an independent project. It is not affiliated with any government agency, and it is not legal advice. For anything specific to your case, talk to your school's DSO or an immigration attorney.
 
-**Status:** in development. The corpus snapshot, eval set, chunking and vector search are built. Hybrid retrieval, the refusal gate and answer generation are next. See [Progress](#progress).
+**Status:** in development. The corpus, eval set, hybrid retrieval, the refusal gate and cited answers work and are measured. The web UI, freshness job and employer views come next. See [Progress](#progress).
 
 ## Why
 
@@ -25,8 +25,8 @@ Questions about one person's case, predictions such as EAD arrival or approval o
 A retrieval-augmented generation system built without an orchestration framework.
 
 - Hybrid retrieval: BM25 plus vector search merged by reciprocal rank fusion, then a cross-encoder reranker. The BM25 tokenizer keeps form numbers like I-983 and citations like 8 CFR 214.2(f)(10) intact.
-- A refusal gate runs before generation: input screen, retrieval score threshold, then a question classifier.
-- A citation check runs after generation. If it fails, the user sees the source passages instead of an unverified answer.
+- A refusal gate runs before generation: input screen, keyword prefilter, retrieval, then a question classifier that sees the best passage. A weak search score beats a case-specific label.
+- Answers are word-for-word quotes from the sources, each checked against the cited passage. A short summary is shown only if its numbers, form IDs and key terms are in those quotes. If a check fails, the student sees the quotes, or the source passages, instead of an unverified answer. Passages from a rule a court has postponed are left out.
 - A scheduled job hashes the official pages, detects changes, re-runs the eval and syncs deletions.
 - An eval set of 67 questions with gold passages (not gold answers), drafted with AI and reviewed by hand, scored on Recall@5, deadline accuracy, citation correctness, refusal accuracy, refusal reason accuracy and fallback rate.
 
@@ -60,6 +60,19 @@ Structure-aware chunks split at section headings and never inside a sentence. Fi
 | Same chain with BGE-base embeddings | 0.93 | 0.95 | The bigger embedding model was worse |
 
 BM25 did not win on form numbers, which vector search also handled. It won on exact domain phrases such as "unemployment clock" and "volunteer", where vector search ranked the right passage far down. The two remaining misses are vague or differently worded questions, such as "how long does OPT last", where the retrieved passages state other durations. Phase 4 also removed website menus and banners that sat inside the pages' main content; the vector baseline stayed at 0.89.
+
+**Answers and refusals (Phase 5):** the 52 answerable eval questions run through the whole pipeline (accepted run `answers-20261123-141400`):
+
+| Measure | Result |
+|---|---|
+| Wrongly refused | 0 of 52 |
+| Full answers, quotes only, passages only | 43, 9, 0 |
+| Citation correctness (the cited passage holds a gold quote) | 0.96 |
+| Deadline accuracy | 0.86 (21 questions) |
+| Refusal accuracy, refusal reason accuracy (97 questions, including paraphrases) | 0.96, 0.80 |
+| Seconds per question | median 7.7, max 22.2 |
+
+Known misses: "how long does OPT last" (the 12-month rule is not retrieved), one deadline answer that leaves out the I-765 approval step, and cap-gap, where USCIS pages disagree on the end date (the regulation says April 1; the answer shows the quotes with a notice).
 
 ## Stack
 

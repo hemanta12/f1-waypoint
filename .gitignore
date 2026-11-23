@@ -21,3 +21,4 @@ __pycache__/
 runs/
 modules/*/index.sqlite
 modules/*/index.tmp
+.DS_Store

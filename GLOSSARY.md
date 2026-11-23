@@ -31,6 +31,18 @@ Exactly one of `weak_retrieval`, `prediction`, `case_specific`, `legal_strategy`
 A question whose answer depends on one person's facts. The product states the general rule from the Corpus and refuses only the verdict.
 _Avoid_: Personal question
 
+**Quote**:
+A claim in an answer that is word-for-word text from a cited passage. A quote that fails the check is never shown as the model wrote it.
+_Avoid_: Paraphrase, summary
+
+**Not in force**:
+A passage in the Corpus that official sources have since replaced or that a court has postponed. It is kept out of retrieval and, where it matters, a notice tells the student the rule is in flux.
+_Avoid_: Outdated, deprecated
+
+**Quotes only / passages only**:
+The two states between a full answer and a Refusal. Quotes only: the verified quotes are shown without the summary. Passages only: a quote failed the check, so the source passages are shown.
+_Avoid_: Error, fallback page
+
 **Gold passage**:
 The document and section that proves the correct answer to an eval question. Eval targets passages, not answers.
 _Avoid_: Gold answer, ground truth

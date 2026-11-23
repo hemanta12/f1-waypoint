@@ -66,7 +66,7 @@ Hard rules: no claim without a cited passage. Every number, duration and form ID
 | Legal strategy | "Should I switch visa types?" | Refuse, point to the DSO or an attorney |
 | Out of scope | H-1B lottery, tax forms, J-1 | Scoped refusal naming what the product covers |
 
-Order of checks: input screen, then retrieval, then the score threshold, then a classifier that labels the question. A case-specific question with weak retrieval is refused as weak retrieval. A refusal is a designed, calm state, not an error.
+Order of checks: input screen, subject-keyword prefilter, retrieval, then a classifier that labels the question; the retrieval score and the label are combined. A case-specific question with weak retrieval is refused as weak retrieval. A refusal is a designed, calm state, not an error.
 
 ## Success metrics
 
@@ -76,10 +76,10 @@ Each target is reset after its first measured run. Recall@5 was reset after the 
 |---|---|---|
 | Recall@5 | The right source passage, or another official passage stating the same rule, is in the top 5 results | 0.95 or higher |
 | Deadline accuracy | The stated number and reporting channel match the gold answer | 95 percent or higher |
-| Citation correctness | Cited passages exist, and every number and form ID appears in them | 100 percent |
+| Citation correctness | Each quoted claim is word for word in its cited passage, and the summary uses only numbers, form IDs and terms from the quotes | 100 percent |
 | Refusal accuracy | Refusal cases are refused, answerable cases are answered | 100 percent on refusal cases, 90 percent or higher on answerable |
 | Refusal reason accuracy | A refusal has the right reason and the right referral | 100 percent on the eval set |
-| Fallback rate | Answerable questions where the citation check fails and only passages are shown | Tracked, reviewed if above about 5 percent |
+| Fallback rate | Answerable questions where a quote fails the check and only passages are shown | Tracked, reviewed if above about 5 percent (0 percent on the accepted run) |
 | Freshness | Time to detect a changed official page | Within one scheduled run |
 
 The eval set is 67 questions with gold passages (not gold answers), drafted with AI and reviewed by hand: deadline and clock, reporting, I-983, employer, near-miss answerable questions that sound risky, and refusal cases covering every refusal reason with paraphrases. A hand-graded sample checks that cited passages actually support each claim.
